@@ -17,28 +17,35 @@
             --badge-accent: #ef4444;
         }
 
-        /* 1. Base theme rules for Dark Mode (Only when active) */
+        /* 1. Base theme rules for Dark Mode background */
 body.dark-theme {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212 !important;
+    color: #ffffff !important;
 }
 
-/* 2. Force the content cards to turn dark ONLY when dark theme is active */
+/* 2. Foolproof rule: Force EVERY card, section, and container to turn dark grey */
 body.dark-theme main,
-body.dark-theme .about-section, 
+body.dark-theme section,
+body.dark-theme article,
+body.dark-theme .about-section,
 body.dark-theme .card,
 body.dark-theme .content-box,
-body.dark-theme .dashboard-grid > div { /* This targets the container grid sections */
+body.dark-theme div[class*="card"],
+body.dark-theme div[class*="box"],
+body.dark-theme div[class*="grid"] > div {
     background-color: #1e1e1e !important;
-    border-color: #333 !important;
+    background-image: none !important; /* Removes any light background patterns */
+    border-color: #333333 !important;
 }
 
-/* 3. Force the text inside those cards to turn white ONLY when dark theme is active */
+/* 3. Force all text elements to be bright white inside dark mode */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
 body.dark-theme p,
 body.dark-theme li,
 body.dark-theme span,
-body.dark-theme h2,
-body.dark-theme h3 {
+body.dark-theme a:not(.theme-toggle-btn) {
     color: #ffffff !important;
 }
 
