@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mseto Junior School</title>
     <style>
+        /* Styling for the Team Crest Badge */
+.sports-header-badge {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.team-badge-img {
+    width: 110px; /* Perfect size to look prominent but clean */
+    height: auto;
+    border-radius: 50%; /* Gives a smooth frame around it if desired, or leave it sharp */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Fun dynamic effect when parents hover over the header area */
+.team-badge-img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
         .sports-card {
     position: relative;
     overflow: hidden;
@@ -582,6 +600,9 @@ body.dark-theme a:not(.theme-toggle-btn) {
    <!-- Sports & Achievements Section -->
 <section class="sports-section">
     <div class="section-container">
+        <div class="sports-header-badge">
+            <img src="1000024419_2.jpg" alt="Mseto Vikings FC Badge" class="team-badge-img">
+        </div>
         <h2 class="section-title">🏆 School Sports & Athletics</h2>
         <p class="section-subtitle">Cheer on our champions! Tracking recent victories and upcoming matches.</p>
 
@@ -592,7 +613,7 @@ body.dark-theme a:not(.theme-toggle-btn) {
         
         <!-- Photo Container Integrated Here -->
         <div class="match-image-wrapper">
-            <img src="images/senior-team.jpg" alt="Mseto Senior Football Team Match Action" class="match-photo" onerror="this.src='https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop&q=60'">
+            <img src="1000024426.jpg" alt="Mseto Senior Football Team Match Action" class="match-photo">
         </div>
 
         <h3>Latest Result</h3>
@@ -613,7 +634,7 @@ body.dark-theme a:not(.theme-toggle-btn) {
         
         <!-- Photo Container Integrated Here -->
         <div class="match-image-wrapper">
-            <img src="images/primary-team.jpg" alt="Mseto Primary Football Team Match" class="match-photo" onerror="this.src='https://images.unsplash.com/photo-1544698310-74ea9d1c8258?w=600&auto=format&fit=crop&q=60'">
+            <img src="1000024427" alt="Mseto Primary Football Team Match" class="match-photo">
         </div>
 
         <h3>Latest Result</h3>
