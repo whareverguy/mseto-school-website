@@ -139,9 +139,6 @@
                 margin-right: 5px;
                 font-size: 0.9rem;
             }
-            .theme-toggle-btn {
-                margin-left: 5px;
-            }
         }
 
         /* --- ACADEMICS HERO BANNER --- */
@@ -269,7 +266,7 @@
         
         <div class="info-card">
             <h2>Junior School Curriculum Framework</h2>
-            <p>At Mseto Junior School, our academic path is thoughtfully engineered to challenge and empower young learners. We offer an immersive educational structure that balances theoretical subject mastery with core practical competencies.</p>
+            <p>At Mseto Junior School, our academic path is thoroughly engineered to challenge and empower young learners. We offer an immersive educational structure that balances theoretical subject mastery with core practical competencies.</p>
         </div>
 
         <div class="info-card">
@@ -301,21 +298,5 @@
     <footer>
         <p>&copy; 2026 Mseto Junior School. Designed and Engineered Professionally.</p>
     </footer>
-
-    <script>
-        function toggleTheme() {
-            const rootElement = document.documentElement;
-            const themeButton = document.getElementById('theme-btn');
-            const currentTheme = rootElement.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                rootElement.removeAttribute('data-theme');
-                themeButton.innerHTML = '🌙 Dark';
-            } else {
-                rootElement.setAttribute('data-theme', 'dark');
-                themeButton.innerHTML = '☀️ Light';
-            }
-        }
-    </script>
 </body>
 </html>
