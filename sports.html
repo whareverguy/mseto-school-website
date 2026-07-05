@@ -5,49 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports & Athletics - Mseto Junior School</title>
     <style>
-        /* Add this to the top of your <style> block in sports.html */
-body {
-    background-color: #1a1a1a; /* Matches your dark theme */
-    color: #ffffff;           /* Ensures text is readable */
-    font-family: sans-serif;
-}
-        /* --- General Page Reset & Setup --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f9;
-            color: #333;
-        }
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+         /* --- DESIGN SYSTEM VARIABLES --- */
+        :root {
+            --bg-main: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-main: #333333;
+            --text-title: #0a192f;
+            --border-accent: #0056b3;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --badge-primary: #38bdf8;
+            --badge-accent: #ef4444;
         }
 
-        /* --- Navigation Bar (Matches Home Page) --- */
-        nav {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px 20px;
+        /* 1. Base theme rules for Dark Mode background */
+body.dark-theme {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+/* 2. Foolproof rule: Force EVERY card, section, and container to turn dark grey */
+body.dark-theme main,
+body.dark-theme section,
+body.dark-theme article,
+body.dark-theme .about-section,
+body.dark-theme .card,
+body.dark-theme .content-box,
+body.dark-theme div[class*="card"],
+body.dark-theme div[class*="box"],
+body.dark-theme div[class*="grid"] > div {
+    background-color: #1e1e1e !important;
+    background-image: none !important; /* Removes any light background patterns */
+    border-color: #333333 !important;
+}
+
+/* 3. Force all text elements to be bright white inside dark mode */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme span,
+body.dark-theme a:not(.theme-toggle-btn) {
+    color: #ffffff !important;
+}
+
+        /* --- GLOBAL BASICS --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden; 
+        }
+
+        /* --- THE NAV BAR --- */
+        header {
+            background-color: #0a192f; 
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            flex-wrap: wrap; 
+            gap: 15px;
         }
-        .logo-text {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #1a1a1a;
-            text-decoration: none;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0; 
         }
-        .nav-links a {
-            margin-left: 20px;
+
+        .school-badge {
+            width: 50px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0; 
+            transition: transform 0.4s ease;
+        }
+
+        .school-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .brand-name {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap; 
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        nav a {
+            color: #cbd5e1;
             text-decoration: none;
-            color: #555;
             font-weight: 500;
+            margin-left: 15px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
-        .nav-links a:hover {
-            color: #2196f3;
+
+        nav a:hover, nav a.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid #cbd5e1;
+            color: #cbd5e1;
+            padding: 5px 12px;
+            margin-left: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* --- MOBILE LAYOUT SYSTEM --- */
+        @media (max-width: 580px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 5px;
+            }
+            nav a {
+                margin-left: 0;
+                margin-right: 5px;
+                font-size: 0.9rem;
+            }
         }
 
         /* --- Sports Page Layout --- */
