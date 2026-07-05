@@ -17,15 +17,21 @@
             --badge-accent: #ef4444;
         }
 
-        /* --- DARK THEME OVERRIDES --- */
-        [data-theme="dark"] {
-            --bg-main: #0f172a;      
-            --bg-card: #1e293b;      
-            --text-main: #cbd5e1;    
-            --text-title: #ffffff;   
-            --border-accent: #38bdf8;
-            --shadow: rgba(0, 0, 0, 0.3);
-        }
+        /* Make sure the main background turns dark */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Force the white content cards to turn dark too */
+body.dark-theme main,
+body.dark-theme .about-section, 
+body.dark-theme .card,
+body.dark-theme .content-box {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
 
         /* --- GLOBAL BASICS --- */
         * {
@@ -143,17 +149,22 @@
 
         /* --- ACADEMICS HERO BANNER --- */
         .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(0, 86, 179, 0.9)), 
-                        url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 30vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
+    background: linear-gradient(135deg, #0d2b45, #203c56);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero h1, .hero p {
+    margin: 10px auto;
+    max-width: 800px; /* Prevents text from stretching too wide */
+}
 
         .hero h1 {
             font-size: 2.4rem;
