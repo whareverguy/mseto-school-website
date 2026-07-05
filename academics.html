@@ -17,20 +17,29 @@
             --badge-accent: #ef4444;
         }
 
-        /* Make sure the main background turns dark */
+        /* 1. Base theme rules for Dark Mode (Only when active) */
 body.dark-theme {
     background-color: #121212;
     color: #e0e0e0;
 }
 
-/* Force the white content cards to turn dark too */
+/* 2. Force the content cards to turn dark ONLY when dark theme is active */
 body.dark-theme main,
 body.dark-theme .about-section, 
 body.dark-theme .card,
-body.dark-theme .content-box {
+body.dark-theme .content-box,
+body.dark-theme .dashboard-grid > div { /* This targets the container grid sections */
     background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
     border-color: #333 !important;
+}
+
+/* 3. Force the text inside those cards to turn white ONLY when dark theme is active */
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme span,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #ffffff !important;
 }
 
         /* --- GLOBAL BASICS --- */
