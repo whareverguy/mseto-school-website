@@ -17,11 +17,11 @@
 
         /* --- DARK THEME OVERRIDES --- */
         [data-theme="dark"] {
-            --bg-main: #0f172a;      /* Deep Slate Black */
-            --bg-card: #1e293b;      /* Dark Slate Card */
-            --text-main: #cbd5e1;    /* Light Gray Text */
-            --text-title: #ffffff;   /* Pure White Headings */
-            --border-accent: #38bdf8;/* Neon/Bright Blue Accent */
+            --bg-main: #0f172a;      
+            --bg-card: #1e293b;      
+            --text-main: #cbd5e1;    
+            --text-title: #ffffff;   
+            --border-accent: #38bdf8;
             --shadow: rgba(0, 0, 0, 0.3);
         }
 
@@ -41,7 +41,7 @@
 
         /* --- THE NAV BAR BACKGROUND --- */
         header {
-            background-color: #0a192f; /* Header stays dark for contrast */
+            background-color: #0a192f; 
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -81,7 +81,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- NAVIGATION ACTIONS --- */
         nav {
             display: flex;
             align-items: center;
@@ -102,7 +101,6 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* --- THE THEME INTERACTIVE TOGGLE --- */
         .theme-toggle-btn {
             background: none;
             border: 2px solid #cbd5e1;
@@ -194,6 +192,7 @@
             display: flex;
             gap: 12px;
             margin-top: 15px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
@@ -204,6 +203,45 @@
             border-radius: 20px;
             font-weight: 600;
             font-size: 0.85rem;
+        }
+
+        /* --- PHOTO GALLERY SYSTEM --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 130px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
 
         /* --- SIDEBAR SOCIAL SYSTEM --- */
@@ -258,7 +296,6 @@
             <a href="#about">About</a>
             <a href="#activities">Clubs</a>
             <a href="#contact">Contact</a>
-            <!-- Interactive Theme Switch Button -->
             <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
         </nav>
     </header>
@@ -281,14 +318,32 @@
                 <p>Welcome to Mseto Junior School. We are dedicated to nurturing academic excellence, creativity, and unique talents. Our modern curriculum balances traditional subject mastery with vital practical skills, giving every student the building blocks they need to build a brilliant future.</p>
             </div>
 
-            <!-- Clubs Card -->
+            <!-- Clubs & Gallery Card -->
             <div class="info-card" id="activities">
                 <h2>Talent & Activity Clubs</h2>
                 <p>Learning at Mseto extends far beyond regular classroom text blocks. We encourage our students to join our active co-curricular programs to stay physically fit and creatively expressive:</p>
+                
                 <div class="clubs-list">
                     <span class="club-badge">🎶 School Choir</span>
                     <span class="club-badge">🛼 Skating Club</span>
                     <span class="club-badge">💻 Computer Studies</span>
+                </div>
+
+                <h3>Campus Life & Events</h3>
+                <!-- CSS GRID GALLERY -->
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80" alt="Music room">
+                        <div class="gallery-caption">Choir Practice</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Learning station">
+                        <div class="gallery-caption">Computer Lab</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=400&q=80" alt="Classroom">
+                        <div class="gallery-caption">Creative Arts</div>
+                    </div>
                 </div>
             </div>
 
@@ -331,16 +386,12 @@
         function toggleTheme() {
             const rootElement = document.documentElement;
             const themeButton = document.getElementById('theme-btn');
-            
-            // Check current active layout state
             const currentTheme = rootElement.getAttribute('data-theme');
             
             if (currentTheme === 'dark') {
-                // Switch to Light Theme
                 rootElement.removeAttribute('data-theme');
                 themeButton.innerHTML = '🌙 Dark';
             } else {
-                // Switch to Dark Theme
                 rootElement.setAttribute('data-theme', 'dark');
                 themeButton.innerHTML = '☀️ Light';
             }
