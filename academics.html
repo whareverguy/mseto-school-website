@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Mseto Junior School</title>
+    <style>
+        /* --- DESIGN SYSTEM VARIABLES --- */
+        :root {
+            --bg-main: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-main: #333333;
+            --text-title: #0a192f;
+            --border-accent: #0056b3;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --badge-primary: #38bdf8;
+            --badge-accent: #ef4444;
+        }
+
+        /* --- DARK THEME OVERRIDES --- */
+        [data-theme="dark"] {
+            --bg-main: #0f172a;      
+            --bg-card: #1e293b;      
+            --text-main: #cbd5e1;    
+            --text-title: #ffffff;   
+            --border-accent: #38bdf8;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- GLOBAL BASICS --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden; 
+        }
+
+        /* --- THE NAV BAR --- */
+        header {
+            background-color: #0a192f; 
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            flex-wrap: wrap; 
+            gap: 15px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0; 
+        }
+
+        .school-badge {
+            width: 50px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0; 
+            transition: transform 0.4s ease;
+        }
+
+        .school-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .brand-name {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap; 
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 15px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid #cbd5e1;
+            color: #cbd5e1;
+            padding: 5px 12px;
+            margin-left: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* --- MOBILE LAYOUT SYSTEM --- */
+        @media (max-width: 580px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 5px;
+            }
+            nav a {
+                margin-left: 0;
+                margin-right: 5px;
+                font-size: 0.9rem;
+            }
+            .theme-toggle-btn {
+                margin-left: 5px;
+            }
+        }
+
+        /* --- ACADEMICS HERO BANNER --- */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(0, 86, 179, 0.9)), 
+                        url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* --- CONTENT CONTAINER --- */
+        .content-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* --- INFO CARD ENGINE --- */
+        .info-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow);
+            margin-bottom: 25px;
+            border-left: 5px solid var(--border-accent);
+        }
+
+        .info-card h2 {
+            color: var(--text-title);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* --- SUBJECTS LIST --- */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .subject-item {
+            background: rgba(0, 86, 179, 0.04);
+            border: 1px solid rgba(0, 86, 179, 0.1);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .subject-item h3 {
+            color: var(--border-accent);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0a192f;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--border-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- NAVIGATION BAR --- -->
+    <header>
+        <div class="logo-container">
+            <div class="school-badge">
+                <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="50" y="13" fill="#ef4444" font-size="8.5" font-weight="bold" text-anchor="middle" font-family="sans-serif">Proverbs 22:6</text>
+                    <text x="24" y="55" fill="#ef4444" font-size="8.5" font-weight="bold" transform="rotate(-74, 24, 55)" text-anchor="middle">MSETO</text>
+                    <rect x="30" y="30" width="40" height="10" fill="#0a192f" rx="2"/>
+                    <text x="50" y="38" fill="#ef4444" font-size="9" font-weight="bold" text-anchor="middle">JUNIOR</text>
+                    <text x="76" y="55" fill="#ef4444" font-size="8.5" font-weight="bold" transform="rotate(74, 76, 55)" text-anchor="middle">SCHOOL</text>
+                    <g fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round">
+                        <path d="M42,52 L42,65 M39,56 L45,56 M40,65 L40,72 M44,65 L44,72" stroke="#38bdf8"/>
+                        <circle cx="42" cy="48" r="2.5" fill="#38bdf8" stroke="none"/>
+                        <path d="M58,52 L58,65 M55,56 L61,56 M56,65 L56,72 M60,65 L60,72" stroke="#38bdf8"/>
+                        <circle cx="58" cy="48" r="2.5" fill="#38bdf8" stroke="none"/>
+                        <path d="M45,58 L55,58" stroke="#38bdf8" stroke-width="1"/>
+                    </g>
+                    <path d="M5,82 L20,78 L35,84 L50,81 L65,84 L80,78 L95,82 L90,92 L50,96 L10,92 Z" fill="#38bdf8" stroke="#ef4444" stroke-width="1"/>
+                    <text x="50" y="90" fill="#ef4444" font-size="5" font-weight="bold" text-anchor="middle">LEARNERS TODAY, LEADERS TOMORROW</text>
+                </svg>
+            </div>
+            <div class="brand-name">Mseto School</div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="academics.html" class="active">Academics</a>
+        </nav>
+    </header>
+
+    <!-- --- ACADEMICS HERO --- -->
+    <section class="hero">
+        <h1>Academic Excellence</h1>
+        <p>Providing solid educational foundations through the Competency-Based Curriculum framework.</p>
+    </section>
+
+    <!-- --- CONTENT --- -->
+    <main class="content-container">
+        
+        <div class="info-card">
+            <h2>Junior School Curriculum Framework</h2>
+            <p>At Mseto Junior School, our academic path is thoughtfully engineered to challenge and empower young learners. We offer an immersive educational structure that balances theoretical subject mastery with core practical competencies.</p>
+        </div>
+
+        <div class="info-card">
+            <h2>Core Learning Areas</h2>
+            <p>Our comprehensive learning focus ensures that students build critical problem-solving and thinking skills across key discipline areas:</p>
+            
+            <div class="subjects-grid">
+                <div class="subject-item">
+                    <h3>Mathematics</h3>
+                    <p>Building algebraic, geometric, and analytical reasoning skills for complex problem solving.</p>
+                </div>
+                <div class="subject-item">
+                    <h3>Integrated Science</h3>
+                    <p>Exploring foundational concepts in biology, physics, and chemistry through interactive laboratory principles.</p>
+                </div>
+                <div class="subject-item">
+                    <h3>Pre-Technical Studies</h3>
+                    <p>Introducing engineering foundations, programming structures, and practical technical skill sets.</p>
+                </div>
+                <div class="subject-item">
+                    <h3>Social Studies</h3>
+                    <p>Understanding local and global citizenship, history patterns, and environmental structures.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mseto Junior School. Designed and Engineered Professionally.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const rootElement = document.documentElement;
+            const themeButton = document.getElementById('theme-btn');
+            const currentTheme = rootElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                rootElement.removeAttribute('data-theme');
+                themeButton.innerHTML = '🌙 Dark';
+            } else {
+                rootElement.setAttribute('data-theme', 'dark');
+                themeButton.innerHTML = '☀️ Light';
+            }
+        }
+    </script>
+</body>
+</html>
