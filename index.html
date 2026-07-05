@@ -5,6 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mseto Junior School</title>
     <style>
+        .sports-card {
+    position: relative;
+    overflow: hidden;
+}
+.team-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.tag-senior {
+    background-color: #2196f3;
+    color: white;
+}
+.tag-primary {
+    background-color: #e91e63;
+    color: white;
+}
+.sports-section {
+    padding: 60px 20px;
+    background-color: var(--bg-secondary, #f9f9f9); /* Adjusts dynamically if you have theme variables */
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1xl));
+    gap: 30px;
+    margin-top: 30px;
+}
+.sports-card {
+    background: var(--bg-primary, #ffffff);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.vs-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    text-align: center;
+}
+.team-name {
+    font-weight: bold;
+    flex: 1;
+    font-size: 1.1rem;
+}
+.vs-badge {
+    background: #ff5722;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0 10px;
+}
+.match-outcome.win {
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.match-meta {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+/* Table Styles */
+.fixtures-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.fixtures-table th, .fixtures-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+.fixtures-table th {
+    background-color: rgba(0,0,0,0.02);
+    color: var(--text-muted, #555);
+}
         /* --- DESIGN SYSTEM VARIABLES --- */
         :root {
             --bg-main: #f4f6f9;
@@ -469,7 +560,72 @@ body.dark-theme a:not(.theme-toggle-btn) {
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1783264767299!5m2!1sen!2ske" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        </aside>
+       </aside>
+   <!-- Sports & Achievements Section -->
+<section class="sports-section">
+    <div class="section-container">
+        <h2 class="section-title">🏆 School Sports & Athletics</h2>
+        <p class="section-subtitle">Cheer on our champions! Tracking recent victories and upcoming matches.</p>
+
+        <div class="sports-grid">
+            <!-- Senior Team Result (U15 & Above) -->
+            <div class="sports-card match-result">
+                <span class="team-tag tag-senior">U15 & Above</span>
+                <h3>Latest Result</h3>
+                <div class="vs-display">
+                    <span class="team-name">Mseto Junior School</span>
+                    <span class="vs-badge">VS</span>
+                    <span class="team-name">Lakeside International</span>
+                </div>
+                <div class="match-outcome win">
+                    <span>🎉 WIN: 10 - 8</span>
+                </div>
+                <p class="match-meta">Friendly Match • Played Recently</p>
+            </div>
+
+            <!-- Lower Primary Team Result -->
+            <div class="sports-card match-result">
+                <span class="team-tag tag-primary">Lower Primary</span>
+                <h3>Latest Result</h3>
+                <div class="vs-display">
+                    <span class="team-name">Mseto Junior School</span>
+                    <span class="vs-badge">VS</span>
+                    <span class="team-name">Lakeside International</span>
+                </div>
+                <div class="match-outcome win">
+                    <span>🎉 WIN: 11 - 10</span>
+                </div>
+                <p class="match-meta">Friendly Match • Played Recently</p>
+            </div>
+
+            <!-- Upcoming Fixtures Card -->
+            <div class="sports-card upcoming-fixtures">
+                <h3>Upcoming Matches</h3>
+                <table class="fixtures-table">
+                    <thead>
+                        <tr>
+                            <th>Opponent</th>
+                            <th>Squad</th>
+                            <th>Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>TBD Opponent</strong></td>
+                            <td>U15 / Senior</td>
+                            <td>Home Ground</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TBD Opponent</strong></td>
+                            <td>Lower Primary</td>
+                            <td>Away Ground</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer>
