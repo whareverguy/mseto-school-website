@@ -37,6 +37,7 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
+            overflow-x: hidden; /* Prevents awkward side-scrolling on mobile */
         }
 
         /* --- THE NAV BAR BACKGROUND --- */
@@ -47,12 +48,15 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            flex-wrap: wrap; /* Allows items to wrap on ultra-small screens */
+            gap: 15px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-shrink: 0; /* Prevents the logo badge and name from squishing */
         }
 
         .school-badge {
@@ -67,6 +71,7 @@
             font-weight: bold;
             font-size: 1.2rem;
             border: 2px solid white;
+            flex-shrink: 0; /* Strict protection for the logo structure */
             transition: transform 0.4s ease;
         }
 
@@ -79,20 +84,23 @@
             font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 0.5px;
+            white-space: nowrap; /* Prevents text from splitting into two awkward lines */
         }
 
         nav {
             display: flex;
             align-items: center;
+            flex-wrap: wrap; /* Ensures elements adjust on narrow viewports */
         }
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 500;
-            margin-left: 20px;
-            padding: 6px 12px;
+            margin-left: 15px;
+            padding: 6px 10px;
             border-radius: 4px;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
@@ -105,8 +113,8 @@
             background: none;
             border: 2px solid #cbd5e1;
             color: #cbd5e1;
-            padding: 5px 10px;
-            margin-left: 20px;
+            padding: 5px 12px;
+            margin-left: 15px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
@@ -114,6 +122,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            flex-shrink: 0;
             transition: all 0.3s ease;
         }
 
@@ -121,6 +130,31 @@
             color: white;
             border-color: white;
             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- MOBILE NAV OVERRIDE SYSTEM --- */
+        @media (max-width: 580px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 5px;
+                font-size: 0.9rem;
+            }
+
+            .theme-toggle-btn {
+                margin-left: 5px;
+            }
         }
 
         /* --- HERO BANNER --- */
@@ -138,9 +172,14 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.4rem;
             margin-bottom: 12px;
             letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.95rem; }
         }
 
         .hero p {
@@ -152,8 +191,8 @@
         /* --- CONTENT GRID CONTAINER --- */
         .content-container {
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 30px auto;
+            padding: 0 15px;
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 25px;
@@ -162,6 +201,7 @@
         @media (max-width: 768px) {
             .content-container {
                 grid-template-columns: 1fr;
+                margin: 20px auto;
             }
         }
 
@@ -190,7 +230,7 @@
         /* --- CLUBS PILLS --- */
         .clubs-list {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             margin-top: 15px;
             margin-bottom: 25px;
             flex-wrap: wrap;
@@ -208,8 +248,8 @@
         /* --- PHOTO GALLERY SYSTEM --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
             margin-top: 15px;
         }
 
@@ -217,7 +257,7 @@
             position: relative;
             border-radius: 6px;
             overflow: hidden;
-            height: 130px;
+            height: 110px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
@@ -239,8 +279,8 @@
             right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            padding: 8px;
-            font-size: 0.75rem;
+            padding: 6px;
+            font-size: 0.7rem;
             font-weight: 500;
         }
 
@@ -329,7 +369,7 @@
                     <span class="club-badge">💻 Computer Studies</span>
                 </div>
 
-                <h3>Campus Life & Events</h3>
+                <h3 style="margin-top: 20px; font-size: 1.1rem; color: var(--text-title);">Campus Life & Events</h3>
                 <!-- CSS GRID GALLERY -->
                 <div class="gallery-grid">
                     <div class="gallery-item">
