@@ -429,19 +429,33 @@
     </footer>
 
     <script>
-        function toggleTheme() {
-            const rootElement = document.documentElement;
-            const themeButton = document.getElementById('theme-btn');
-            const currentTheme = rootElement.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                rootElement.removeAttribute('data-theme');
-                themeButton.innerHTML = '🌙 Dark';
-            } else {
-                rootElement.setAttribute('data-theme', 'dark');
-                themeButton.innerHTML = '☀️ Light';
-            }
-        }
+        // Function to toggle the theme and save it
+function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('theme-btn');
+    
+    if (body.classList.contains('dark-theme')) {
+        body.classList.remove('dark-theme');
+        btn.innerHTML = "🌙 Dark";
+        localStorage.setItem('theme', 'light'); // Save preference
+    } else {
+        body.classList.add('dark-theme');
+        btn.innerHTML = "☀️ Light";
+        localStorage.setItem('theme', 'dark');  // Save preference
+    }
+}
+
+// THIS IS THE KEY: Check for saved preference when the page loads
+window.onload = function() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const btn = document.getElementById('theme-btn');
+    
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        if (btn) btn.innerHTML = "☀️ Light";
+    }
+}
     </script>
 </body>
 </html>
