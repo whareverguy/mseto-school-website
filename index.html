@@ -5,64 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mseto Junior School | Learners Today, Leaders Tomorrow</title>
     <style>
-        /* CSS Variables for Dark/Light Mode */
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #1e2640;
-            --text-main: #f8fafc;
-            --text-muted: #a0aec0;
-            --accent-cyan: #38bdf8;
-            --accent-red: #ef4444;
-            --border-color: #1f293d;
-        }
+        :root { --bg-color: #0b0f19; --card-bg: #1e2640; --text-main: #f8fafc; --text-muted: #a0aec0; --accent-cyan: #38bdf8; --accent-red: #ef4444; }
+        body.light-mode { --bg-color: #ffffff; --card-bg: #f1f5f9; --text-main: #1e293b; --text-muted: #64748b; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; transition: 0.3s; }
 
-        body.light-mode {
-            --bg-color: #ffffff;
-            --card-bg: #f1f5f9;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #cbd5e1;
-        }
-
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            margin: 0; 
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Navigation */
+        /* Header & SVG Badge */
         header { background-color: var(--bg-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-red); position: sticky; top: 0; z-index: 1000; }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .school-badge { width: 55px; height: 60px; }
         .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        
         nav { display: flex; gap: 20px; align-items: center; }
         nav a { color: var(--text-main); text-decoration: none; font-weight: 500; }
         nav a:hover { color: var(--accent-cyan); }
-        .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; }
+        .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 8px 12px; border-radius: 4px; }
 
-        /* Hero */
-        .hero { padding: 80px 5%; text-align: center; border-bottom: 4px solid var(--accent-cyan); }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-
-        /* Contact Section */
-        .contact-section { padding: 60px 5%; background-color: var(--card-bg); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
-        .map-container { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; border: 2px solid var(--accent-cyan); }
-        .contact-details h3 { color: var(--accent-cyan); margin-top: 0; }
-        .contact-details p { margin: 10px 0; color: var(--text-main); }
-        .social-links a { color: var(--accent-cyan); text-decoration: none; margin-right: 15px; font-weight: bold; }
-        .social-links a:hover { text-decoration: underline; }
-
-        footer { padding: 40px 5%; text-align: center; border-top: 1px solid var(--border-color); }
+        /* Content */
+        .hero { padding: 60px 5%; text-align: center; }
+        .about-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 5%; background: var(--card-bg); }
+        .map-container { height: 300px; border-radius: 8px; border: 2px solid var(--accent-cyan); overflow: hidden; }
+        footer { padding: 20px; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo-container">
             <div class="school-badge">
+                <!-- CUSTOM SVG BADGE -->
                 <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4"></path>
                     <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"></path>
@@ -88,42 +58,75 @@
             <a href="index.html">Home</a>
             <a href="academics.html">Academics</a>
             <a href="sports.html">Sports</a>
-            <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Switch to Light Mode</button>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Welcome to Mseto Junior School</h1>
+        <p>Providing a foundation of excellence for every child.</p>
     </section>
 
-    <section class="contact-section">
-        <div class="contact-grid">
-            <div class="map-container">
-                <!-- Replace with your actual Google Maps Embed link -->
-                <iframe src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1783399118327!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="contact-details">
-                <h3>Contact Us</h3>
-                <p><strong>Email:</strong> msetojuniorsch@hmail.com</p>
-                <p><strong>Phone:</strong> +254 XX XXX XXX</p>
-                <div class="social-links">
-                    <p><strong>Follow Us:</strong></p>
-                    <a href="https://www.facebook.com/msetojuniorsch/">Facebook</a> 
-                    <a href="#">Instagram</a> 
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
+    <section class="about-section">
+        <h2>About Our School</h2>
+        <p>Mseto Junior School is dedicated to nurturing young talent through a holistic approach. We offer a comprehensive curriculum that balances rigorous academics with creative arts and physical development. Our environment is designed to ensure every learner feels safe, inspired, and challenged to grow into the leaders of tomorrow.</p>
+    </section>
+
+    <section class="contact-grid">
+        <div class="map-container">
+            <iframe src="YOUR_MAP_LINK_HERE" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div>
+            <h3>Contact Details</h3>
+            <p><strong>Email:</strong> msetoschool@gmail.com</p>
+            <p><strong>Phone:</strong> +254 XX XXX XXX</p>
+            <p><strong>Socials:</strong> Facebook | Instagram</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Mseto Junior School.</p>
-    </footer>
+    <footer>&copy; 2026 Mseto Junior School</footer>
 
     <script>
+        const btn = document.getElementById('theme-btn');
+        // Apply saved theme on load
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            btn.textContent = 'Switch to Dark Mode';
+        }
+
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                btn.textContent = 'Switch to Dark Mode';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                btn.textContent = 'Switch to Light Mode';
+            }
         }
     </script>
+    <script>
+    // Theme Logic
+    const btn = document.getElementById('theme-btn');
+    
+    // Check saved preference
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        btn.textContent = 'Switch to Dark Mode';
+    } else {
+        btn.textContent = 'Switch to Light Mode';
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            btn.textContent = 'Switch to Dark Mode';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            btn.textContent = 'Switch to Light Mode';
+        }
+    }
+</script>
 </body>
 </html>
