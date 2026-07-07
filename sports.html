@@ -24,7 +24,7 @@
             line-height: 1.6;
         }
 
-        /* Navigation Header (Exact match to Home) */
+        /* Navigation Header */
         header {
             background-color: var(--mseto-dark);
             padding: 15px 5%;
@@ -54,8 +54,6 @@
         }
         .hero h1 { font-size: 3rem; margin-bottom: 10px; color: var(--text-light); }
         .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-.viking-badge-wrapper { 
-            margin-bottom: 40px; 
 
         /* Athletics Content Section */
         .sports-container {
@@ -65,15 +63,21 @@
             text-align: center;
         }
         
-        /* Centered Viking Badge */
+        /* 1. CENTER AND SHAPE THE BADGE */
         .viking-badge-wrapper { 
             margin-bottom: 40px; 
             display: flex; 
-            justify-content: center; 
+            justify-content: center; /* Centers the badge horizontally */
+            align-items: center;
         }
         .viking-badge-img { 
-            width: 150px; 
-            height: auto; 
+            width: 160px; 
+            height: 160px; /* Forces a perfect square */
+            object-fit: cover; /* Prevents stretching */
+            border-radius: 50%; /* Cuts the square into a perfect circle */
+            border: 4px solid var(--mseto-cyan);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            background-color: white; 
         }
 
         .team-grid {
@@ -103,11 +107,11 @@
             font-weight: bold;
         }
         
-        /* Fixed Match Photos */
+        /* 2. FIX THE TEAM PHOTO SIZES */
         .match-photo {
             width: 100%;
-            height: 250px;
-            object-fit: cover; 
+            height: 250px; /* Restricts the photo to a manageable height */
+            object-fit: cover; /* Crops nicely without distorting the team */
             border-radius: 6px;
             margin-top: 15px;
             background-color: #111625;
@@ -124,7 +128,6 @@
     <header>
         <div class="logo-container">
             <div class="school-badge">
-                <!-- CUSTOM SVG LOGO -->
                 <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4"></path>
                     <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"></path>
@@ -154,18 +157,16 @@
         </nav>
     </header>
 
-    <!-- Sports Hero Banner -->
     <section class="hero">
         <h1>Mseto Vikings Athletics</h1>
         <p>Home of teamwork, discipline, and outstanding sportsmanship.</p>
     </section>
 
-    <!-- Main Content Container -->
     <div class="sports-container">
         
-     <!-- Main Club Team Badge -->
+        <!-- Main Club Team Badge -->
         <div class="viking-badge-wrapper">
-            <img src="IMG-20260705-WA0000.jpg" alt="Mseto Vikings FC Badge" class="viking-badge-img">
+            <img src="IMG-20260705-WA0000.JPG" alt="Mseto Vikings FC Badge" class="viking-badge-img">
         </div>
 
         <!-- Team Category Cards Grid -->
@@ -175,19 +176,19 @@
             <div class="team-card">
                 <span class="age-tag">U15 &amp; ABOVE</span>
                 <h2>Senior Team</h2>
-                <img src="IMG-20260627-WA0017.jpg" alt="Senior Team Squad Photo" class="match-photo">
+                <img src="IMG-20260705-WA0017.JPG" alt="Senior Team Squad Photo" class="match-photo">
             </div>
 
             <!-- Primary Football Team Card -->
             <div class="team-card">
                 <span class="age-tag" style="background-color: var(--mseto-red); color: white;">LOWER PRIMARY</span>
                 <h2>Primary Team</h2>
-                <img src="IMG-20260627-WA0010.jpg" alt="Primary Team Squad Photo" class="match-photo">
+                <img src="IMG-20260705-WA0010.JPG" alt="Primary Team Squad Photo" class="match-photo">
             </div>
 
         </div>
+    </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
         <p>Learners Today, Leaders Tomorrow.</p>
