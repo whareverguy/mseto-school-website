@@ -65,20 +65,17 @@
             text-align: center;
         }
         
-        .viking-badge-wrapper { margin-bottom: 40px; }
-        .viking-badge-img { max-width: 150px; height: auto; }
-.viking-badge-wrapper { 
+        /* Centered Viking Badge */
+        .viking-badge-wrapper { 
             margin-bottom: 40px; 
+            display: flex; 
+            justify-content: center; 
         }
         .viking-badge-img { 
-            width: 160px; 
-            height: 160px; /* Forces a perfect square */
-            object-fit: cover; /* Prevents the image from stretching */
-            border-radius: 50%; /* This cuts the square into a perfect circle! */
-            border: 4px solid var(--mseto-cyan); /* Adds a premium Mseto blue ring around it */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Adds a subtle shadow */
-            background-color: white; /* Helps if the logo has dark edges */
+            width: 150px; 
+            height: auto; 
         }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -105,10 +102,12 @@
             font-size: 0.8rem;
             font-weight: bold;
         }
+        
+        /* Fixed Match Photos */
         .match-photo {
             width: 100%;
             height: 250px;
-            object-fit: cover;
+            object-fit: cover; 
             border-radius: 6px;
             margin-top: 15px;
             background-color: #111625;
@@ -164,7 +163,7 @@
     <!-- Main Content Container -->
     <div class="sports-container">
         
-        <!-- Main Club Team Badge -->
+     <!-- Main Club Team Badge -->
         <div class="viking-badge-wrapper">
             <img src="IMG-20260705-WA0000.jpg" alt="Mseto Vikings FC Badge" class="viking-badge-img">
         </div>
@@ -187,7 +186,6 @@
             </div>
 
         </div>
-    </div>
 
     <!-- Footer -->
     <footer>
