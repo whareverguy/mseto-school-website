@@ -218,6 +218,28 @@
         <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
         <p>Learners Today, Leaders Tomorrow.</p>
     </footer>
+<script>
+    // Theme Logic
+    const btn = document.getElementById('theme-btn');
+    
+    // Check saved preference
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        btn.textContent = 'Switch to Dark Mode';
+    } else {
+        btn.textContent = 'Switch to Light Mode';
+    }
 
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            btn.textContent = 'Switch to Dark Mode';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            btn.textContent = 'Switch to Light Mode';
+        }
+    }
+</script>
 </body>
 </html>
