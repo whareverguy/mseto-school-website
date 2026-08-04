@@ -4,138 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics | Mseto Junior School</title>
-    <body>
-    <!-- ADD THIS SCRIPT BLOCK AT THE VERY TOP -->
+    <style>
+        :root { --bg-color: #0b0f19; --card-bg: #1e2640; --text-main: #f8fafc; --text-muted: #a0aec0; --accent-cyan: #38bdf8; --accent-red: #ef4444; --border-color: #1f293d; }
+        body.light-mode { --bg-color: #ffffff; --card-bg: #f1f5f9; --text-main: #1e293b; --text-muted: #64748b; --border-color: #cbd5e1; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; transition: background-color 0.3s, color 0.3s; }
+
+        header { background-color: var(--bg-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-red); position: sticky; top: 0; z-index: 1000; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .school-badge { width: 55px; height: 60px; }
+        .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        
+        nav { display: flex; gap: 20px; align-items: center; }
+        nav a { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent-cyan); }
+        .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
+
+        .hero { padding: 60px 5%; text-align: center; border-bottom: 4px solid var(--accent-cyan); }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 5%; }
+        .card { background-color: var(--card-bg); padding: 30px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid var(--accent-cyan); }
+        .card h2 { color: var(--accent-cyan); margin-top: 0; }
+        .card p { color: var(--text-main); line-height: 1.6; }
+
+        footer { padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
     <script>
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-mode');
         }
     </script>
-    
-    <!-- Rest of your page code goes here... -->
-    <style>
-        /* Global & Brookhouse-style Premium Look */
-        :root {
-            --mseto-dark: #0b0f19;
-            --mseto-card: #1e2640;
-            --mseto-cyan: #38bdf8;
-            --mseto-red: #ef4444;
-            --text-light: #f8fafc;
-            --text-muted: #a0aec0;
-        }
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #111625; 
-            color: var(--text-light); 
-            margin: 0; 
-            padding: 0;
-            line-height: 1.6;
-        }
-        /* Navigation Header */
-        header {
-            background-color: var(--mseto-dark);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--mseto-red);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo-container { display: flex; align-items: center; gap: 15px; }
-        .school-badge { width: 55px; height: 60px; }
-        .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-        nav { display: flex; gap: 25px; align-items: center; }
-        nav a { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
-        nav a:hover, nav a.active { color: var(--mseto-cyan); }
-        .apply-btn { background-color: var(--mseto-red); padding: 8px 16px; border-radius: 4px; font-weight: bold; }
-        .apply-btn:hover { background-color: #dc2626; color: white; }
-
-        /* Academics Hero Banner */
-        .hero {
-            background: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.9)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 5%;
-            text-align: center;
-            border-bottom: 4px solid var(--mseto-cyan);
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: var(--text-light); }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
-
-        /* Academics Content Layout */
-        .container { max-width: 1000px; margin: 60px auto; padding: 0 5%; }
-        
-        .academic-division {
-            background-color: var(--mseto-card);
-            border-left: 5px solid var(--mseto-cyan);
-            padding: 40px;
-            margin-bottom: 40px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Alternate borders for visual interest */
-        .academic-division:nth-child(even) {
-            border-left: none;
-            border-right: 5px solid var(--mseto-red);
-            border-radius: 8px 0 0 8px;
-        }
-
-        .academic-division h2 {
-            font-size: 2rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-        
-        .academic-division h2 span { color: var(--mseto-cyan); }
-        .academic-division:nth-child(even) h2 span { color: var(--mseto-red); }
-
-        .academic-division p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 25px;
-        }
-
-        /* Subjects Grid */
-        .subjects-title {
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .subjects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .subject-tag {
-            background-color: var(--mseto-dark);
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            border: 1px solid #2d3748;
-        }
-
-        /* Footer */
-        footer { background-color: #05080f; padding: 40px 5%; text-align: center; border-top: 1px solid #1f293d; }
-        footer p { color: var(--text-muted); font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-    <!-- Premium Navigation Header -->
     <header>
         <div class="logo-container">
             <div class="school-badge">
-                <!-- CUSTOM SVG LOGO -->
                 <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4"></path>
                     <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"></path>
@@ -157,98 +59,53 @@
             </div>
             <div class="brand-name">Mseto School</div>
         </div>
+        
         <nav>
-            <nav>
-    <a href="index.html">Home</a>
-    <a href="academics.html">Academics</a>
-    <a href="sports.html">Sports & Clubs</a>
-    <a href="admissions.html">Admissions</a>
-    <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
-</nav>
+            <a href="index.html">Home</a>
+            <a href="academics.html" class="active">Academics</a>
+            <a href="sports.html">Sports & Clubs</a>
+            <a href="admissions.html">Admissions</a>
+            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
+        </nav>
     </header>
 
-    <!-- Academics Hero Banner -->
     <section class="hero">
         <h1>Academic Excellence</h1>
-        <p>Fostering curiosity, critical thinking, and a lifelong love for learning through a comprehensive and engaging curriculum tailored for tomorrow's leaders.</p>
+        <p>Shaping brilliant minds through a comprehensive curriculum.</p>
     </section>
 
-    <!-- Main Content Container -->
-    <section class="container">
-        
-        <!-- Early Years Division -->
-        <div class="academic-division">
-            <h2>Early <span>Years</span></h2>
-            <p>Our Early Years program provides a nurturing, play-based learning environment. We focus on developing foundational cognitive, social, and emotional skills, ensuring every child feels safe, valued, and excited to explore the world around them.</p>
-            
-            <div class="subjects-title">Core Focus Areas</div>
-            <div class="subjects-grid">
-                <div class="subject-tag">Language Activities</div>
-                <div class="subject-tag">Mathematical Activities</div>
-                <div class="subject-tag">Environmental Activities</div>
-                <div class="subject-tag">Psychomotor & Creative Arts</div>
-            </div>
+    <div class="container">
+        <div class="card">
+            <h2>Junior School Curriculum</h2>
+            <p>Our curriculum is designed to meet national educational standards while encouraging critical thinking, problem-solving, and practical technological skills.</p>
         </div>
-
-        <!-- Lower Primary Division -->
-        <div class="academic-division">
-            <h2>Lower <span>Primary</span></h2>
-            <p>In Lower Primary, we build upon the early foundation by introducing structured learning while maintaining an engaging and active approach. Students begin to master critical literacy and numeracy skills, developing independence and problem-solving abilities.</p>
-            
-            <div class="subjects-title">Key Learning Areas</div>
-            <div class="subjects-grid">
-                <div class="subject-tag">Mathematics</div>
-                <div class="subject-tag">English & Kiswahili Literacy</div>
-                <div class="subject-tag">Hygiene & Nutrition</div>
-                <div class="subject-tag">Movement & Creative Activities</div>
-            </div>
+        <div class="card">
+            <h2>Evaluation & Exams</h2>
+            <p>We maintain high standards of continuous assessment, regular homework review, and term evaluations to track student progress and ensure readiness for future academic milestones.</p>
         </div>
+    </div>
 
-        <!-- Junior School Division -->
-        <div class="academic-division">
-            <h2>Junior <span>School</span></h2>
-            <p>Aligned with modern competency-based education, our Junior School curriculum prepares students for higher learning. Through inquiry-based projects and pre-technical studies, students develop practical skills, critical thinking, and strong character.</p>
-            
-            <div class="subjects-title">Curriculum Highlights</div>
-            <div class="subjects-grid">
-                <div class="subject-tag">Pre-Technical Studies</div>
-                <div class="subject-tag">Integrated Science</div>
-                <div class="subject-tag">Social Studies & Life Skills</div>
-                <div class="subject-tag">Agriculture & Nutrition</div>
-                <div class="subject-tag">Creative Arts & Sports</div>
-                <div class="subject-tag">Mathematics & Languages</div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
-        <p>Learners Today, Leaders Tomorrow.</p>
     </footer>
-<script>
-    // Theme Logic
-    const btn = document.getElementById('theme-btn');
-    
-    // Check saved preference
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        btn.textContent = 'Switch to Dark Mode';
-    } else {
-        btn.textContent = 'Switch to Light Mode';
-    }
 
-    function toggleTheme() {
-        document.body.classList.toggle('light-mode');
+    <script>
+        const btn = document.getElementById('theme-btn');
         if (document.body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-            btn.textContent = 'Switch to Dark Mode';
+            btn.textContent = 'Dark';
         } else {
-            localStorage.setItem('theme', 'dark');
-            btn.textContent = 'Switch to Light Mode';
+            btn.textContent = 'Light';
         }
-    }
-</script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                btn.textContent = 'Dark';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                btn.textContent = 'Light';
+            }
+        }
+    </script>
 </body>
 </html>
