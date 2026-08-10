@@ -5,34 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mseto Junior School | Learners Today, Leaders Tomorrow</title>
     <style>
-        :root { --bg-color: #0b0f19; --card-bg: #1e2640; --text-main: #f8fafc; --text-muted: #a0aec0; --accent-cyan: #38bdf8; --accent-red: #ef4444; --border-color: #1f293d; }
-        body.light-mode { --bg-color: #ffffff; --card-bg: #f1f5f9; --text-main: #1e293b; --text-muted: #64748b; --border-color: #cbd5e1; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; transition: background-color 0.3s, color 0.3s; }
+        :root { 
+            --bg-color: #0b0f19; 
+            --card-bg: #1e2640; 
+            --text-main: #f8fafc; 
+            --text-muted: #a0aec0; 
+            --accent-cyan: #38bdf8; 
+            --accent-red: #ef4444; 
+            --border-color: #1f293d; 
+        }
 
-        /* Header & Unified Nav */
-        header { background-color: var(--bg-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-red); position: sticky; top: 0; z-index: 1000; }
+        body.light-mode { 
+            --bg-color: #ffffff; 
+            --card-bg: #f1f5f9; 
+            --text-main: #1e293b; 
+            --text-muted: #64748b; 
+            --border-color: #cbd5e1; 
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navigation Header */
+        header { 
+            background-color: var(--bg-color); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid var(--accent-red); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .school-badge { width: 55px; height: 60px; }
-        .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; }
+        .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
         
         nav { display: flex; gap: 20px; align-items: center; }
         nav a { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
 
-        /* Content Sections */
-        .hero { padding: 80px 5%; text-align: center; border-bottom: 4px solid var(--accent-cyan); }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        /* Hero Banner with Background Photo */
+        .hero { 
+            padding: 120px 5%; 
+            text-align: center; 
+            border-bottom: 4px solid var(--accent-cyan);
+            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('IMG_20260718_105351.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; color: var(--accent-cyan); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+        /* About Section */
         .about-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-section h2 { color: var(--accent-cyan); font-size: 2rem; margin-bottom: 20px; }
         .about-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
-        
-        .contact-section { padding: 60px 5%; background-color: var(--card-bg); }
+
+        /* Photo Gallery Section */
+        .gallery-section { padding: 60px 5%; background-color: var(--card-bg); }
+        .gallery-section h2 { text-align: center; color: var(--accent-cyan); margin-bottom: 30px; font-size: 2rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .gallery-card { border-radius: 8px; overflow: hidden; border: 2px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+        .gallery-card img:hover { transform: scale(1.03); }
+
+        /* Contact & Map Section */
+        .contact-section { padding: 60px 5%; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; align-items: center; }
         .map-container { height: 300px; border-radius: 8px; border: 2px solid var(--accent-cyan); overflow: hidden; }
-        .contact-details h3 { color: var(--accent-cyan); margin-top: 0; }
+        .contact-details h3 { color: var(--accent-cyan); margin-top: 0; font-size: 1.5rem; }
         .contact-details p { margin: 10px 0; color: var(--text-main); }
 
-        footer { padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+        /* Footer */
+        footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -43,6 +99,7 @@
         }
     </script>
 
+    <!-- Navigation Header -->
     <header>
         <div class="logo-container">
             <div class="school-badge">
@@ -68,7 +125,6 @@
             <div class="brand-name">Mseto School</div>
         </div>
         
-        <!-- UNIFIED NAVIGATION ACROSS ALL PAGES -->
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="academics.html">Academics</a>
@@ -78,20 +134,36 @@
         </nav>
     </header>
 
+    <!-- Hero Section with Background Photo -->
     <section class="hero">
         <h1>Welcome to Mseto Junior School</h1>
         <p>Learners Today, Leaders Tomorrow</p>
     </section>
 
+    <!-- About Section -->
     <section class="about-section">
         <h2>About Our School</h2>
         <p>Mseto Junior School provides a holistic, rigorous curriculum designed to challenge young minds while fostering moral character and creativity. Our dedicated educators ensure every child is supported in a safe, inspiring environment.</p>
     </section>
 
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <h2>Life at Mseto Junior School</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="IMG_20260718_113909.jpg" alt="School bus transport">
+            </div>
+            <div class="gallery-card">
+                <img src="IMG_20260718_113911.jpg" alt="School buses on field trip">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
     <section class="contact-section">
         <div class="contact-grid">
             <div class="map-container">
-                <iframe src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1785835532161!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="YOUR_GOOGLE_MAPS_EMBED_LINK_HERE" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="contact-details">
                 <h3>Contact Details</h3>
@@ -102,6 +174,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
     </footer>
