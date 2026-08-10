@@ -54,18 +54,41 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
 
-        /* Hero Banner with Background Photo */
+        /* Immersive Hero Banner (Cinematic Style) */
         .hero { 
-            padding: 120px 5%; 
-            text-align: center; 
+            min-height: 75vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 60px 8%; 
             border-bottom: 4px solid var(--accent-cyan);
-            background: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('IMG_20260718_105351.jpg');
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG_20260718_105351.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            text-align: left;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; color: var(--accent-cyan); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+        .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
+        
+        .hero-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .hero-btn:hover {
+            background-color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #0b0f19;
+        }
 
         /* About Section */
         .about-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
@@ -89,6 +112,11 @@
 
         /* Footer */
         footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -134,10 +162,11 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Background Photo -->
+    <!-- Immersive Cinematic Hero Banner -->
     <section class="hero">
-        <h1>Welcome to Mseto Junior School</h1>
-        <p>Learners Today, Leaders Tomorrow</p>
+        <div class="hero-subtitle">Learners Today, Leaders Tomorrow</div>
+        <h1>Mseto Junior School</h1>
+        <a href="admissions.html" class="hero-btn">Book A Tour</a>
     </section>
 
     <!-- About Section -->
@@ -151,10 +180,10 @@
         <h2>Life at Mseto Junior School</h2>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <img src="IMG_20260718_113909.jpg" alt="School bus transport">
+                <img src="IMG-20260718-WA0056_1786363184242.jpg" alt="School bus transport">
             </div>
             <div class="gallery-card">
-                <img src="IMG_20260718_113911.jpg" alt="School buses on field trip">
+                <img src="IMG-20260718-WA0058.jpg" alt="School buses on field trip">
             </div>
         </div>
     </section>
