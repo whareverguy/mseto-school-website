@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions | Mseto Junior School</title>
     <style>
+        /* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    header {
+        position: relative;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        border-bottom: 2px solid var(--accent-red);
+        padding: 25px 5%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        box-sizing: border-box;
+        align-items: flex-start;
+        gap: 15px;
+        z-index: 1001;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 5px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .theme-btn {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}
         :root {
             --bg-color: #0b0f19;
             --card-bg: #1e2640;
