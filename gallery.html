@@ -170,18 +170,30 @@
     </footer>
 
     <script>
-        const btn = document.getElementById('theme-btn');
-        btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light');
-                btn.textContent = 'Dark';
-            } else {
-                localStorage.setItem('theme', 'dark');
-                btn.textContent = 'Light';
-            }
+    const themeBtn = document.getElementById('theme-btn');
+    
+    // Initialize correct button text on load
+    if (themeBtn) {
+        themeBtn.textContent = document.body.classList.contains('light-mode') ? 'Dark Mode' : 'Light Mode';
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        
+        if (isLight) {
+            localStorage.setItem('theme', 'light');
+            if (themeBtn) themeBtn.textContent = 'Dark Mode';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            if (themeBtn) themeBtn.textContent = 'Light Mode';
         }
-    </script>
+    }
+
+    function toggleMenu() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
