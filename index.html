@@ -140,15 +140,32 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--bg-color);
+                box-sizing: border-box;
+                background-color: var(--card-bg);
                 flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                border-bottom: 2px solid var(--accent-red);
-                box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-                gap: 15px;
+                align-items: flex-start;
+                padding: 15px 5%;
+                border-bottom: 2px solid var(--accent-cyan);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                gap: 0;
             }
             nav.active { display: flex; }
+            nav a {
+                font-family: cursive; /* Matches the handwritten font style of your subpages */
+                font-size: 1.15rem;
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
+                text-align: left;
+            }
+            nav a:last-of-type { border-bottom: none; }
+            .theme-btn {
+                width: 100%;
+                text-align: left;
+                padding: 10px 12px;
+                margin-top: 10px;
+                font-family: cursive;
+            }
             .hero { padding: 40px 5%; min-height: 60vh; }
             .hero h1 { font-size: 2.2rem; }
             .contact-grid { grid-template-columns: 1fr; }
