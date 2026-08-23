@@ -23,13 +23,24 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 5px 10px; border-radius: 4px; font-weight: 500; font-size: 0.85rem; }
         .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
+        
+        /* Hero Banner with Background Photo */
         .hero { 
-            min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 60px 8%; border-bottom: 4px solid var(--accent-cyan);
-            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260718-WA0076.jpg');
-            background-size: cover; background-position: center; background-repeat: no-repeat;
+            min-height: 65vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; 
+            align-items: flex-start; 
+            padding: 60px 8%; 
+            border-bottom: 4px solid var(--accent-cyan);
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260619_091018.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
         }
         .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
         .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
+        
         .content-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; }
         .info-box { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         .info-box h3 { color: var(--accent-cyan); margin-top: 0; margin-bottom: 15px; font-size: 1.4rem; }
@@ -41,6 +52,7 @@
         .submit-btn { background-color: var(--accent-cyan); color: #0b0f19; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; }
         .submit-btn:hover { opacity: 0.9; }
         footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+        
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
             nav { display: none; flex-direction: column; width: 100%; background-color: var(--card-bg); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
@@ -101,10 +113,12 @@
             <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
         </nav>
     </header>
+
     <section class="hero">
         <div class="hero-subtitle">Enroll Today</div>
         <h1>Join Mseto Junior School</h1>
     </section>
+
     <section class="content-section">
         <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Begin your journey towards academic excellence and strong moral character. Admissions are open for Junior Secondary grades.</p>
         <div class="info-box">
@@ -126,7 +140,9 @@
             </form>
         </div>
     </section>
+
     <footer><p>&copy; 2026 Mseto Junior School. All rights reserved.</p></footer>
+
     <script>
         function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
         const btn = document.getElementById('theme-btn');
