@@ -6,12 +6,20 @@
     <title>Mseto Junior School | Sports & Clubs</title>
     <style>
         :root { 
-            --bg-color: #0b0f19; --card-bg: #1e2640; --text-main: #f8fafc; 
-            --text-muted: #a0aec0; --accent-cyan: #38bdf8; --accent-red: #ef4444; --border-color: #1f293d; 
+            --bg-color: #0b0f19; 
+            --card-bg: #1e2640; 
+            --text-main: #f8fafc; 
+            --text-muted: #a0aec0; 
+            --accent-cyan: #38bdf8; 
+            --accent-red: #ef4444; 
+            --border-color: #1f293d; 
         }
         body.light-mode { 
-            --bg-color: #ffffff; --card-bg: #f1f5f9; --text-main: #1e293b; 
-            --text-muted: #64748b; --border-color: #cbd5e1; 
+            --bg-color: #ffffff; 
+            --card-bg: #f1f5f9; 
+            --text-main: #1e293b; 
+            --text-muted: #64748b; 
+            --border-color: #cbd5e1; 
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
         header { background-color: var(--bg-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-red); position: sticky; top: 0; z-index: 1000; }
@@ -23,19 +31,31 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 5px 10px; border-radius: 4px; font-weight: 500; font-size: 0.85rem; }
         .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
+        
+        /* Hero Banner with Background Photo */
         .hero { 
-            min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 60px 8%; border-bottom: 4px solid var(--accent-cyan);
+            min-height: 65vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; 
+            align-items: flex-start; 
+            padding: 60px 8%; 
+            border-bottom: 4px solid var(--accent-cyan);
             background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260718-WA0056_1786363184242.jpg');
-            background-size: cover; background-position: center; background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
         }
         .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
         .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
+        
         .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
         .sports-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .sport-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         .sport-card h3 { color: var(--accent-cyan); margin-top: 0; margin-bottom: 15px; font-size: 1.3rem; }
         .sport-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
         footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+        
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
             nav { display: none; flex-direction: column; width: 100%; background-color: var(--card-bg); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
@@ -96,10 +116,12 @@
             <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
         </nav>
     </header>
+
     <section class="hero">
         <div class="hero-subtitle">Activities & Adventures</div>
         <h1>Sports & Co-Curricular</h1>
     </section>
+
     <section class="content-section">
         <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Building teamwork, leadership, physical fitness, and talent outside the traditional classroom through competitive sports and engaging school clubs.</p>
         <div class="sports-grid">
@@ -109,7 +131,9 @@
             <div class="sport-card"><h3>Clubs & Societies</h3><p>Engaging student-led clubs including science club, debate, scouting, and environmental conservation.</p></div>
         </div>
     </section>
+
     <footer><p>&copy; 2026 Mseto Junior School. All rights reserved.</p></footer>
+
     <script>
         function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
         const btn = document.getElementById('theme-btn');
