@@ -128,8 +128,53 @@
         .contact-details h3 { color: var(--accent-cyan); margin-top: 0; font-size: 1.5rem; }
         .contact-details p { margin: 10px 0; color: var(--text-main); }
 
-        /* Footer */
-        footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+        /* Modern 3-Column Footer Styles */
+        footer { 
+            background-color: var(--card-bg); 
+            padding: 50px 5% 20px 5%; 
+            border-top: 2px solid var(--border-color); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+        }
+        .footer-col h4 {
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            color: var(--text-muted);
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: var(--accent-cyan);
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
 
         /* Responsive Media Queries */
         @media(max-width: 768px) {
@@ -279,9 +324,30 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Modern Clean 3-Column Footer -->
     <footer>
-        <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mseto Junior School</h4>
+                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><strong>Phone:</strong> +254 735 411906</p>
+                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
+                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="academics.html">Academics</a></p>
+                <p><a href="admissions.html">Admissions</a></p>
+                <p><a href="downloads.html">Downloads</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- Scripts -->
