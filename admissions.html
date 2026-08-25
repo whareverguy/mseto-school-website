@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mseto Junior School | Admissions</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root { 
             --bg-color: #0b0f19; 
             --card-bg: #1e2640; 
-            --footer-bg: #131a2e; /* Distinct slightly deeper tone for footer separation */
+            --footer-bg: #131a2e; 
             --text-main: #f8fafc; 
             --text-muted: #a0aec0; 
             --accent-cyan: #38bdf8; 
@@ -19,7 +23,7 @@
         body.light-mode { 
             --bg-color: #ffffff; 
             --card-bg: #f1f5f9; 
-            --footer-bg: #e2e8f0; /* Distinct contrast tone for light mode footer */
+            --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
             --text-muted: #64748b; 
             --border-color: #cbd5e1; 
@@ -79,9 +83,24 @@
         .info-box h3 { color: var(--accent-cyan); margin-top: 0; margin-bottom: 15px; font-size: 1.4rem; }
         .info-box ul { padding-left: 20px; color: var(--text-muted); margin: 0; }
         .info-box li { margin-bottom: 10px; }
+        
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-main); }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-main); font-size: 1rem; box-sizing: border-box; }
+        
+        /* Custom Success Message Box Styling */
+        .success-message {
+            display: none;
+            background-color: rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--accent-cyan);
+            color: var(--text-main);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
         .submit-btn { background-color: var(--accent-cyan); color: #0b0f19; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; }
         .submit-btn:hover { opacity: 0.9; }
 
@@ -205,7 +224,7 @@
     </section>
 
     <section class="content-section">
-        <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Begin your journey towards academic excellence and strong moral character. Admissions are open for Junior Secondary grades.</p>
+        <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Begin your journey towards academic excellence and strong moral character. Admissions are open for all grades from Playgroup up to Grade 9.</p>
         
         <div class="info-box">
             <h3>Admission Requirements</h3>
@@ -218,7 +237,13 @@
         
         <div class="info-box">
             <h3>Book a Tour or Apply Online</h3>
-            <form onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been received.');">
+            
+            <!-- Custom Success Feedback Box -->
+            <div id="success-alert" class="success-message">
+                Thank you! Your application inquiry has been successfully received. Our team will contact you shortly.
+            </div>
+
+            <form id="admissions-form">
                 <div class="form-group">
                     <label for="parent-name">Parent/Guardian Name</label>
                     <input type="text" id="parent-name" required placeholder="Enter your full name">
@@ -295,6 +320,25 @@
         function toggleMenu() { 
             document.getElementById('nav-menu').classList.toggle('active'); 
         }
+
+        // Automatically close mobile menu when a navigation link is clicked
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        // Handle interactive form submission with custom feedback message
+        const form = document.getElementById('admissions-form');
+        const successAlert = document.getElementById('success-alert');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            successAlert.style.display = 'block';
+            form.reset();
+            successAlert.scrollIntoView({ behavior: 'smooth' });
+        });
 
         const btn = document.getElementById('theme-btn');
         btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
