@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mseto Junior School | Gallery</title>
+    <title>Mseto Junior School | Downloads</title>
     <style>
         :root { 
             --bg-color: #0b0f19; 
@@ -56,7 +56,6 @@
         .theme-btn { cursor: pointer; background: var(--card-bg); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 5px 10px; border-radius: 4px; font-weight: 500; font-size: 0.85rem; }
         .menu-toggle { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
         
-        /* Hero Banner with Background Photo */
         .hero { 
             min-height: 65vh; 
             display: flex; 
@@ -65,7 +64,7 @@
             align-items: flex-start; 
             padding: 60px 8%; 
             border-bottom: 4px solid var(--accent-cyan);
-            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG_20260718_073822.jpg');
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260718-WA0062.jpg');
             background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat;
@@ -73,12 +72,14 @@
         .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
         .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
         
-        .content-section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
-        .gallery-item { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .gallery-caption { padding: 15px; font-size: 0.95rem; color: var(--text-muted); text-align: center; }
-        
+        .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
+        .download-list { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .download-item { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .download-item h3 { margin: 0 0 5px 0; color: var(--accent-cyan); font-size: 1.2rem; }
+        .download-item p { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
+        .dl-btn { background-color: var(--accent-cyan); color: #0b0f19; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem; white-space: nowrap; transition: opacity 0.3s; }
+        .dl-btn:hover { opacity: 0.9; }
+
         /* Distinct Footer Styles */
         footer { 
             background-color: var(--footer-bg); 
@@ -131,6 +132,7 @@
             nav.active { display: flex; }
             nav a { font-size: 1.1rem; width: 100%; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
             .hero h1 { font-size: 2.2rem; }
+            .download-item { flex-direction: column; align-items: flex-start; gap: 15px; }
         }
     </style>
 </head>
@@ -184,31 +186,41 @@
             <a href="academics.html">Academics</a>
             <a href="sports.html">Sports & Clubs</a>
             <a href="admissions.html">Admissions</a>
-            <a href="downloads.html">Downloads</a>
+            <a href="downloads.html" class="active">Downloads</a>
             <a href="announcements.html">Announcements</a>
-            <a href="gallery.html" class="active">Gallery</a>
+            <a href="gallery.html">Gallery</a>
             <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-subtitle">Photo Gallery</div>
-        <h1>Captured Moments</h1>
+        <div class="hero-subtitle">Resources & Documents</div>
+        <h1>School Downloads</h1>
     </section>
 
     <section class="content-section">
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="IMG-20260718-WA0062.jpg" alt="School Trip">
-                <div class="gallery-caption">Educational Trip Exploration</div>
+        <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Access important forms, holiday assignments, fee structures, and academic calendars below.</p>
+        <div class="download-list">
+            <div class="download-item">
+                <div>
+                    <h3>Holiday Assignment Pack (Grade 8)</h3>
+                    <p>Comprehensive revision tasks and projects for the school break.</p>
+                </div>
+                <a href="#" class="dl-btn">Download PDF</a>
             </div>
-            <div class="gallery-item">
-                <img src="IMG-20260718-WA0076.jpg" alt="School Activities">
-                <div class="gallery-caption">Learners in Action</div>
+            <div class="download-item">
+                <div>
+                    <h3>Fee Structure & Guidelines</h3>
+                    <p>Detailed breakdown of tuition, activity fees, and payment deadlines.</p>
+                </div>
+                <a href="#" class="dl-btn">Download PDF</a>
             </div>
-            <div class="gallery-item">
-                <img src="IMG_20260718_121347.jpg" alt="Group Photo">
-                <div class="gallery-caption">School Group Excursion</div>
+            <div class="download-item">
+                <div>
+                    <h3>Academic Calendar</h3>
+                    <p>Term dates, examination schedules, and school events.</p>
+                </div>
+                <a href="#" class="dl-btn">Download PDF</a>
             </div>
         </div>
     </section>
