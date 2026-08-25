@@ -81,7 +81,7 @@
         .info-box li { margin-bottom: 10px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-main); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-main); font-size: 1rem; box-sizing: border-box; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-main); font-size: 1rem; box-sizing: border-box; }
         .submit-btn { background-color: var(--accent-cyan); color: #0b0f19; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; }
         .submit-btn:hover { opacity: 0.9; }
 
@@ -220,8 +220,25 @@
             <h3>Book a Tour or Apply Online</h3>
             <form onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been received.');">
                 <div class="form-group">
-                    <label for="name">Parent/Guardian Name</label>
-                    <input type="text" id="name" required placeholder="Enter your full name">
+                    <label for="parent-name">Parent/Guardian Name</label>
+                    <input type="text" id="parent-name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Student's Full Name</label>
+                    <input type="text" id="student-name" required placeholder="Enter student's full name">
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade Level Applying For</label>
+                    <select id="grade" required>
+                        <option value="" disabled selected>Select grade level</option>
+                        <option value="Grade 7">Grade 7</option>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous-school">Previous School Attended</label>
+                    <input type="text" id="previous-school" placeholder="Enter previous school name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
