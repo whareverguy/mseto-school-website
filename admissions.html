@@ -6,18 +6,51 @@
     <title>Mseto Junior School | Admissions</title>
     <style>
         :root { 
-            --bg-color: #0b0f19; --card-bg: #1e2640; --text-main: #f8fafc; 
-            --text-muted: #a0aec0; --accent-cyan: #38bdf8; --accent-red: #ef4444; --border-color: #1f293d; 
+            --bg-color: #0b0f19; 
+            --card-bg: #1e2640; 
+            --footer-bg: #131a2e; /* Distinct slightly deeper tone for footer separation */
+            --text-main: #f8fafc; 
+            --text-muted: #a0aec0; 
+            --accent-cyan: #38bdf8; 
+            --accent-red: #ef4444; 
+            --border-color: #1f293d; 
         }
+
         body.light-mode { 
-            --bg-color: #ffffff; --card-bg: #f1f5f9; --text-main: #1e293b; 
-            --text-muted: #64748b; --border-color: #cbd5e1; 
+            --bg-color: #ffffff; 
+            --card-bg: #f1f5f9; 
+            --footer-bg: #e2e8f0; /* Distinct contrast tone for light mode footer */
+            --text-main: #1e293b; 
+            --text-muted: #64748b; 
+            --border-color: #cbd5e1; 
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
-        header { background-color: var(--bg-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent-red); position: sticky; top: 0; z-index: 1000; }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navigation Header */
+        header { 
+            background-color: var(--bg-color); 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid var(--accent-red); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .school-badge { width: 45px; height: 50px; }
         .brand-name { font-size: 1.3rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        
         nav { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
         nav a { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.3s; white-space: nowrap; }
         nav a:hover, nav a.active { color: var(--accent-cyan); }
@@ -51,7 +84,52 @@
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-main); font-size: 1rem; box-sizing: border-box; }
         .submit-btn { background-color: var(--accent-cyan); color: #0b0f19; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; }
         .submit-btn:hover { opacity: 0.9; }
-        footer { background-color: #05080f; padding: 30px 5%; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Distinct Footer Styles */
+        footer { 
+            background-color: var(--footer-bg); 
+            padding: 50px 5% 20px 5%; 
+            border-top: 3px solid var(--accent-cyan); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            align-items: start;
+        }
+        .footer-col h4 {
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            color: var(--text-muted);
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .footer-map-container {
+            height: 180px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-cyan);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
         
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
@@ -63,7 +141,12 @@
     </style>
 </head>
 <body>
-    <script>if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }</script>
+    <script>
+        if (localStorage.getItem('theme') === 'light') { 
+            document.body.classList.add('light-mode'); 
+        }
+    </script>
+
     <header>
         <div class="logo-container">
             <div class="school-badge">
@@ -101,7 +184,9 @@
             </div>
             <div class="brand-name">Mseto School</div>
         </div>
+        
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        
         <nav id="nav-menu">
             <a href="index.html">Home</a>
             <a href="academics.html">Academics</a>
@@ -121,6 +206,7 @@
 
     <section class="content-section">
         <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Begin your journey towards academic excellence and strong moral character. Admissions are open for Junior Secondary grades.</p>
+        
         <div class="info-box">
             <h3>Admission Requirements</h3>
             <ul>
@@ -129,24 +215,64 @@
                 <li>Parent/Guardian interview session and school tour.</li>
             </ul>
         </div>
+        
         <div class="info-box">
             <h3>Book a Tour or Apply Online</h3>
             <form onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been received.');">
-                <div class="form-group"><label for="name">Parent/Guardian Name</label><input type="text" id="name" required placeholder="Enter your full name"></div>
-                <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" required placeholder="Enter your email"></div>
-                <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" required placeholder="Enter phone number"></div>
-                <div class="form-group"><label for="message">Message / Preferred Tour Date</label><textarea id="message" rows="4" placeholder="Let us know any specific questions or preferred dates"></textarea></div>
+                <div class="form-group">
+                    <label for="name">Parent/Guardian Name</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Preferred Tour Date</label>
+                    <textarea id="message" rows="4" placeholder="Let us know any specific questions or preferred dates"></textarea>
+                </div>
                 <button type="submit" class="submit-btn">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer><p>&copy; 2026 Mseto Junior School. All rights reserved.</p></footer>
+    <!-- Modern 3-Column Footer with Accent Separator & Tone Contrast -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mseto Junior School</h4>
+                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><strong>Phone:</strong> +254 735 411906</p>
+                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
+                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us On Map</h4>
+                <div class="footer-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
+        function toggleMenu() { 
+            document.getElementById('nav-menu').classList.toggle('active'); 
+        }
+
         const btn = document.getElementById('theme-btn');
         btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
+        
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
