@@ -12,15 +12,15 @@
             --text-muted: #a0aec0; 
             --accent-cyan: #38bdf8; 
             --accent-red: #ef4444; 
-            --border-color: #db2777; 
+            --border-color: #f472b6; 
         }
 
         body.light-mode { 
             --bg-color: #ffffff; 
             --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
-            --text-muted: #64748b; 
-            --border-color: #f472b6; 
+            --text-muted: #475569; 
+            --border-color: #db2777; 
         }
 
         body { 
@@ -72,30 +72,21 @@
         
         .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
         
-        /* Berry Blush Gradient (Rich Plum -> Magenta -> Rose) */
+        /* Vibrant Sunrise Glow Gradient across BOTH modes (No fading to white) */
         .announcement-card { 
-            background: linear-gradient(135deg, #701a75 0%, #be185d 50%, #e11d48 100%); 
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%); 
             border: 1px solid var(--border-color); 
             border-radius: 8px; 
             padding: 25px; 
             margin-bottom: 25px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25); 
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
-        body.light-mode .announcement-card {
-            background: linear-gradient(135deg5, #fdf2f8 0%, #fbcfe8 50%, #f472b6 100%);
-            background: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 50%, #f472b6 100%);
-            border-color: #db2777;
-        }
-
-        .announcement-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(190, 24, 93, 0.3); }
-        .announcement-card .date { font-size: 0.85rem; color: #fbcfe8; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
-        body.light-mode .announcement-card .date { color: #831843; text-shadow: none; }
-        .announcement-card h3 { margin: 0 0 12px 0; font-size: 1.3rem; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
-        body.light-mode .announcement-card h3 { color: #500724; text-shadow: none; }
-        .announcement-card p { margin: 0; color: #fdf2f8; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
-        body.light-mode .announcement-card p { color: #4c0519; text-shadow: none; font-weight: 500; }
+        .announcement-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(236, 72, 153, 0.35); }
+        .announcement-card .date { font-size: 0.85rem; color: #fef08a; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .announcement-card h3 { margin: 0 0 12px 0; font-size: 1.3rem; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .announcement-card p { margin: 0; color: #f8fafc; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
         
         /* Distinct Footer Styles */
         footer { 
@@ -195,7 +186,6 @@
         </div>
     </section>
 
-    <!-- Modern 3-Column Footer with Accent Separator & Tone Contrast -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
