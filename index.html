@@ -114,15 +114,21 @@
         }
 
         /* About & Content Sections */
-        .content-section { padding: 60px 5%; max-width: 900px; margin: 30px auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .content-section { padding: 60px 5% 30px 5%; max-width: 900px; margin: 30px auto 10px auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .content-section h2 { color: var(--accent-cyan); font-size: 2rem; margin-bottom: 20px; text-align: center; }
         .content-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 15px; }
 
         /* Feature Cards Grid */
         .cards-section {
-            padding: 10px 5% 50px 5%;
+            padding: 20px 5% 40px 5%;
             max-width: 1050px;
             margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--accent-cyan);
+            margin-bottom: 25px;
+            font-size: 2rem;
         }
         .cards-grid {
             display: grid;
@@ -167,7 +173,7 @@
         }
 
         /* Gallery Section */
-        .gallery-section { padding: 60px 5%; }
+        .gallery-section { padding: 40px 5% 60px 5%; }
         .gallery-section h2 { text-align: center; color: var(--accent-cyan); margin-bottom: 30px; font-size: 2rem; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
         .gallery-card { border-radius: 8px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -303,6 +309,25 @@
     </section>
 
     <section class="cards-section">
+        <h2 class="section-title">Our School Sections</h2>
+        <div class="cards-grid">
+            <div class="info-card">
+                <h3>Pre-School</h3>
+                <p>Nurturing young learners through play-based discovery, foundational literacy, numeracy, and active social development in a warm, supportive environment.</p>
+            </div>
+            <div class="info-card">
+                <h3>Upper Primary</h3>
+                <p>Developing strong academic foundations, critical thinking, and independent learning habits to prepare students for junior secondary success.</p>
+            </div>
+            <div class="info-card">
+                <h3>Junior Secondary</h3>
+                <p>Empowering learners under the Competency Based Curriculum (CBC) with practical skills, STEM education, coding classes, and leadership opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <h2 class="section-title">Guiding Principles</h2>
         <div class="cards-grid">
             <div class="info-card">
                 <h3>Our Vision</h3>
