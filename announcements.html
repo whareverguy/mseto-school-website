@@ -12,7 +12,7 @@
             --text-muted: #a0aec0; 
             --accent-cyan: #38bdf8; 
             --accent-red: #ef4444; 
-            --border-color: #0891b2; 
+            --border-color: #059669; 
         }
 
         body.light-mode { 
@@ -20,7 +20,7 @@
             --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
             --text-muted: #64748b; 
-            --border-color: #67e8f9; 
+            --border-color: #34d399; 
         }
 
         body { 
@@ -72,9 +72,9 @@
         
         .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
         
-        /* Option 3: Teal Horizon Gradient (Teal -> Cyan) */
+        /* Option 4: Emerald Fresh Gradient (Mint Green -> Emerald) */
         .announcement-card { 
-            background: linear-gradient(135deg, #f0fdfa 0%, #06b6d4 50%, #0284c7 100%); 
+            background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #10b981 100%); 
             border: 1px solid var(--border-color); 
             border-radius: 8px; 
             padding: 25px; 
@@ -84,17 +84,17 @@
         }
 
         body.light-mode .announcement-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #a5f3fc 50%, #38bdf8 100%);
-            border-color: #38bdf8;
+            background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 50%, #6ee7b7 100%);
+            border-color: #34d399;
         }
 
-        .announcement-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(6, 182, 212, 0.3); }
-        .announcement-card .date { font-size: 0.85rem; color: #020617; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; text-shadow: 0 1px 2px rgba(255,255,255,0.4); }
-        body.light-mode .announcement-card .date { color: #0c4a6e; text-shadow: none; }
+        .announcement-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(16, 185, 129, 0.3); }
+        .announcement-card .date { font-size: 0.85rem; color: #a7f3d0; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; display: block; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
+        body.light-mode .announcement-card .date { color: #065f46; text-shadow: none; }
         .announcement-card h3 { margin: 0 0 12px 0; font-size: 1.3rem; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
-        body.light-mode .announcement-card h3 { color: #082f49; text-shadow: none; }
-        .announcement-card p { margin: 0; color: #f8fafc; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
-        body.light-mode .announcement-card p { color: #0f172a; text-shadow: none; font-weight: 500; }
+        body.light-mode .announcement-card h3 { color: #022c22; text-shadow: none; }
+        .announcement-card p { margin: 0; color: #ecfdf5; font-size: 0.95rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        body.light-mode .announcement-card p { color: #064e3b; text-shadow: none; font-weight: 500; }
         
         /* Distinct Footer Styles */
         footer { 
@@ -194,7 +194,6 @@
         </div>
     </section>
 
-    <!-- Modern 3-Column Footer with Accent Separator & Tone Contrast -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
