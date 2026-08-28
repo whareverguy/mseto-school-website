@@ -7,24 +7,22 @@
     <style>
         :root { 
             --bg-color: #f8fafc; 
-            --card-bg: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%); 
             --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
             --text-muted: #475569; 
             --accent-cyan: #0284c7; 
             --accent-red: #dc2626; 
-            --border-color: #f472b6; 
+            --border-color: #cbd5e1; 
         }
 
         body.dark-mode { 
             --bg-color: #0b0f19; 
-            --card-bg: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%); 
             --footer-bg: #131a2e; 
             --text-main: #f8fafc; 
             --text-muted: #f8fafc; 
             --accent-cyan: #38bdf8; 
             --accent-red: #ef4444; 
-            --border-color: #f472b6; 
+            --border-color: #1f293d; 
         }
 
         body { 
@@ -113,8 +111,22 @@
             color: #ffffff;
         }
 
+        /* Unique Section Gradients */
+        .gradient-sunrise {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+            border: 1px solid #f472b6;
+        }
+        .gradient-teal {
+            background: linear-gradient(135deg, #06b6d4 0%, #0284c7 50%, #0f766e 100%);
+            border: 1px solid #38bdf8;
+        }
+        .gradient-berry {
+            background: linear-gradient(135deg, #701a75 0%, #be185d 50%, #e11d48 100%);
+            border: 1px solid #f472b6;
+        }
+
         /* About & Content Sections */
-        .content-section { padding: 60px 5% 30px 5%; max-width: 900px; margin: 30px auto 10px auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .content-section { padding: 60px 5% 30px 5%; max-width: 900px; margin: 30px auto 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .content-section h2 { color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.4); font-size: 2rem; margin-bottom: 20px; text-align: center; }
         .content-section p { color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.3); font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 15px; font-weight: 500; }
 
@@ -136,17 +148,15 @@
             gap: 24px;
         }
         .info-card {
-            background: var(--card-bg);
             padding: 32px 28px;
             border-radius: 12px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
             text-align: left;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .info-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
         .info-card h3 {
             color: #ffffff;
@@ -166,13 +176,6 @@
             margin: 0;
             text-align: left;
             font-weight: 500;
-        }
-        body.dark-mode .info-card {
-            background: var(--card-bg);
-            border-color: var(--border-color);
-        }
-        body.dark-mode .info-card p {
-            color: #f8fafc;
         }
 
         /* Gallery Section */
@@ -306,7 +309,7 @@
         <a href="admissions.html" class="hero-btn">Book A Tour</a>
     </section>
 
-    <section class="content-section">
+    <section class="content-section gradient-sunrise">
         <h2>About Our School</h2>
         <p>Mseto Junior School provides a holistic, rigorous curriculum designed to challenge young minds while fostering moral character and creativity. Our dedicated educators ensure every child is supported in a safe, inspiring environment.</p>
     </section>
@@ -314,15 +317,15 @@
     <section class="cards-section">
         <h2 class="section-title">Our School Sections</h2>
         <div class="cards-grid">
-            <div class="info-card">
+            <div class="info-card gradient-teal">
                 <h3>Pre-School</h3>
                 <p>Nurturing young learners through play-based discovery, foundational literacy, numeracy, and active social development in a warm, supportive environment.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card gradient-teal">
                 <h3>Upper Primary</h3>
                 <p>Developing strong academic foundations, critical thinking, and independent learning habits to prepare students for junior secondary success.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card gradient-teal">
                 <h3>Junior Secondary</h3>
                 <p>Empowering learners under the Competency Based Curriculum (CBC) with practical skills, STEM education, coding classes, and leadership opportunities.</p>
             </div>
@@ -332,15 +335,15 @@
     <section class="cards-section">
         <h2 class="section-title">Guiding Principles</h2>
         <div class="cards-grid">
-            <div class="info-card">
+            <div class="info-card gradient-berry">
                 <h3>Our Vision</h3>
                 <p>We envision a community of joyful, lifelong learners prepared to make a positive difference in the world.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card gradient-berry">
                 <h3>Our Mission</h3>
                 <p>To provide a transformational learning journey for every learner in Mseto and develop each child to the best of his/her potential in both academic and life skills.</p>
             </div>
-            <div class="info-card">
+            <div class="info-card gradient-berry">
                 <h3>The Future</h3>
                 <p>We are focused on transforming our Junior High into an institution with competitive standards across all operations, empowering our learners with the skills and mindsets to confidently reach their dreams.</p>
             </div>
