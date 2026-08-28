@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +7,25 @@
     <title>Mseto Junior School | Learners Today, Leaders Tomorrow</title>
     <style>
         :root { 
+            --bg-color: #f8fafc; 
+            --card-bg: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%); 
+            --footer-bg: #e2e8f0; 
+            --text-main: #1e293b; 
+            --text-muted: #64748b; 
+            --accent-cyan: #0284c7; 
+            --accent-red: #dc2626; 
+            --border-color: #cbd5e1; 
+        }
+
+        body.dark-mode { 
             --bg-color: #0b0f19; 
-            --card-bg: #1e2640; 
+            --card-bg: linear-gradient(135deg, #1e2640 0%, #2a1b3d 100%); 
             --footer-bg: #131a2e; 
             --text-main: #f8fafc; 
             --text-muted: #a0aec0; 
             --accent-cyan: #38bdf8; 
             --accent-red: #ef4444; 
             --border-color: #1f293d; 
-        }
-
-        body.light-mode { 
-            --bg-color: #ffffff; 
-            --card-bg: #f1f5f9; 
-            --footer-bg: #e2e8f0; 
-            --text-main: #1e293b; 
-            --text-muted: #64748b; 
-            --border-color: #cbd5e1; 
         }
 
         body { 
@@ -46,9 +49,10 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            transition: background-color 0.3s;
         }
         .logo-container { display: flex; align-items: center; gap: 15px; }
-        .school-badge { width: 55px; height: 60px; }
+        .school-logo-img { width: 50px; height: 50px; object-fit: contain; border-radius: 50%; border: 2px solid var(--accent-cyan); }
         .brand-name { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
         
         nav { display: flex; gap: 20px; align-items: center; }
@@ -74,16 +78,16 @@
             transition: all 0.3s ease;
         }
 
-        /* Immersive Cinematic Hero Banner */
+        /* Hero Banner */
         .hero { 
-            min-height: 75vh; 
+            min-height: 70vh; 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-start;
             padding: 60px 8%; 
             border-bottom: 4px solid var(--accent-cyan);
-            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260718-WA0058.jpg');
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.9) 10%, rgba(11, 15, 25, 0.3) 60%), url('IMG-20260718-WA0058.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -107,29 +111,32 @@
         .hero-btn:hover {
             background-color: var(--accent-cyan);
             border-color: var(--accent-cyan);
-            color: #0b0f19;
+            color: #ffffff;
         }
 
-        /* About Section */
-        .about-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
-        .about-section h2 { color: var(--accent-cyan); font-size: 2rem; margin-bottom: 20px; }
-        .about-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+        /* About & Info Sections with Gradients */
+        .content-section { padding: 60px 5%; max-width: 900px; margin: 30px auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .content-section h2 { color: var(--accent-cyan); font-size: 2rem; margin-bottom: 20px; text-align: center; }
+        .content-section h3 { color: var(--text-main); font-size: 1.4rem; margin-top: 30px; margin-bottom: 10px; text-align: center; }
+        .content-section p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 15px; }
+        .content-section blockquote { font-style: italic; color: var(--text-main); border-left: 4px solid var(--accent-cyan); padding-left: 15px; margin: 20px auto; max-width: 800px; text-align: left; }
 
-        /* Photo Gallery Section */
-        .gallery-section { padding: 60px 5%; background-color: var(--card-bg); }
+        /* Gallery Section */
+        .gallery-section { padding: 60px 5%; }
         .gallery-section h2 { text-align: center; color: var(--accent-cyan); margin-bottom: 30px; font-size: 2rem; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .gallery-card { border-radius: 8px; overflow: hidden; border: 2px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .gallery-card { border-radius: 8px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.3s ease; }
         .gallery-card img:hover { transform: scale(1.03); }
 
-        /* Distinct Footer Styles with Accent Line Separator */
+        /* Distinct Footer Styles */
         footer { 
             background-color: var(--footer-bg); 
             padding: 50px 5% 20px 5%; 
             border-top: 3px solid var(--accent-cyan); 
             color: var(--text-muted); 
             font-size: 0.9rem; 
+            transition: background-color 0.3s;
         }
         .footer-grid {
             display: grid;
@@ -179,7 +186,7 @@
                 left: 0;
                 width: 100%;
                 box-sizing: border-box;
-                background-color: var(--card-bg);
+                background-color: var(--bg-color);
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 15px 5%;
@@ -189,7 +196,6 @@
             }
             nav.active { display: flex; }
             nav a {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-size: 1.05rem;
                 width: 100%;
                 padding: 12px 0;
@@ -202,7 +208,6 @@
                 text-align: left;
                 padding: 10px 12px;
                 margin-top: 10px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
             .hero { padding: 40px 5%; min-height: 60vh; }
             .hero h1 { font-size: 2.2rem; }
@@ -211,40 +216,18 @@
     </style>
 </head>
 <body>
+    <!-- Instant theme check script: Defaults to Light Mode unless dark was saved -->
     <script>
-        if (localStorage.getItem('theme') !== 'dark') {
-            document.body.classList.add('light-mode');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
         }
     </script>
 
+    <!-- Navigation Header -->
     <header>
         <div class="logo-container">
-            <div class="school-badge">
-                <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4"></path>
-                    <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"></path>
-                    
-                    <text x="50" y="15" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Proverbs 22:6</text>
-                    
-                    <text x="27" y="52" fill="#ef4444" font-size="7.5" font-weight="bold" transform="rotate(-52, 27, 52)" text-anchor="middle">MSETO</text>
-                    
-                    <rect x="30" y="28" width="40" height="11" fill="#0a192f" rx="2"></rect>
-                    <text x="50" y="36" fill="#ef4444" font-size="8.5" font-weight="bold" text-anchor="middle">JUNIOR</text>
-                    
-                    <text x="73" y="52" fill="#ef4444" font-size="7.5" font-weight="bold" transform="rotate(52, 73, 52)" text-anchor="middle">SCHOOL</text>
-                    
-                    <g fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round">
-                        <path d="M42,50 L42,63 M39,54 L45,54 M40,63 L40,70 M44,63 L44,70" stroke="#38bdf8"></path>
-                        <circle cx="42" cy="46" r="2.5" fill="#38bdf8" stroke="none"></circle>
-                        <path d="M58,50 L58,63 M55,54 L61,54 M56,63 L56,70 M60,63 L60,70" stroke="#38bdf8"></path>
-                        <circle cx="58" cy="46" r="2.5" fill="#38bdf8" stroke="none"></circle>
-                        <path d="M45,56 L55,56" stroke="#38bdf8" stroke-width="1"></path>
-                    </g>
-                    
-                    <path d="M5,82 L20,78 L35,84 L50,81 L65,84 L80,78 L95,82 L90,92 L50,96 L10,92 Z" fill="#38bdf8" stroke="none"></path>
-                    <text x="50" y="89" fill="#ef4444" font-size="3.8" font-weight="bold" text-anchor="middle">LEARNERS TODAY LEADERS TOMORROW</text>
-                </svg>
-            </div>
+            <!-- Official School Logo Image Tag updated to logo.jpg -->
+            <img src="logo.jpg" alt="Mseto Junior School Logo" class="school-logo-img" onerror="this.style.display='none'">
             <div class="brand-name">Mseto Junior School</div>
         </div>
         
@@ -262,33 +245,59 @@
             <a href="downloads.html">Downloads</a>
             <a href="announcements.html">Announcements</a>
             <a href="gallery.html">Gallery</a>
-            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Mode</button>
+            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Dark</button>
         </nav>
     </header>
 
+    <!-- Hero Banner -->
     <section class="hero">
         <div class="hero-subtitle">Learners Today, Leaders Tomorrow</div>
         <h1>Mseto Junior School</h1>
         <a href="admissions.html" class="hero-btn">Book A Tour</a>
     </section>
 
-    <section class="about-section">
+    <!-- About Section with Gradient Card Background -->
+    <section class="content-section">
         <h2>About Our School</h2>
         <p>Mseto Junior School provides a holistic, rigorous curriculum designed to challenge young minds while fostering moral character and creativity. Our dedicated educators ensure every child is supported in a safe, inspiring environment.</p>
     </section>
 
+    <!-- Vision & Mission Section -->
+    <section class="content-section">
+        <h2>Our Core Purpose</h2>
+        
+        <h3>Our Vision</h3>
+        <p>We aim to cultivate a community of joyful, lifelong learners who are fully equipped to make a positive difference in the world.</p>
+        
+        <h3>Our Mission</h3>
+        <p>To offer a transformational educational journey for every student at Mseto, nurturing each child to their highest potential in both academics and essential life skills.</p>
+    </section>
+
+    <!-- The Future Section -->
+    <section class="content-section">
+        <h2>Junior School Section: The Future</h2>
+        <p>We are focused on transforming our Junior High into an institution with highly competitive standards across all areas. This transformation is designed to positively shape our students' mindsets. We picture our learners equipped with the vital skills and competencies needed to face tomorrow with confidence and achieve their biggest dreams.</p>
+        <p>By enriching our curriculum with experiences beyond the classroom, we prepare them for real-world success.</p>
+        
+        <blockquote>
+            "We firmly believe that the future of our society rests in our hands, and we proudly embrace this noble responsibility by providing our students with a solid foundation that serves as their stepping stone to a successful future."
+        </blockquote>
+    </section>
+
+    <!-- Photo Gallery Section -->
     <section class="gallery-section">
         <h2>Life at Mseto Junior School</h2>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <img src="IMG-20260718-WA0062.jpg" alt="School buses on field trip">
+                <img src="IMG-20260718-WA0062.jpg" alt="School activities">
             </div>
             <div class="gallery-card">
-                <img src="IMG-20260718-WA0058.jpg" alt="School trip transport">
+                <img src="IMG-20260718-WA0058.jpg" alt="School transport and grounds">
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -304,7 +313,7 @@
             <div class="footer-col">
                 <h4>Find Us On Map</h4>
                 <div class="footer-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe src="[https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske)" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </div>
@@ -313,25 +322,27 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         const btn = document.getElementById('theme-btn');
         const navMenu = document.getElementById('nav-menu');
 
-        if (document.body.classList.contains('light-mode')) {
-            btn.textContent = 'Dark';
-        } else {
+        // Set initial button text based on active theme
+        if (document.body.classList.contains('dark-mode')) {
             btn.textContent = 'Light';
+        } else {
+            btn.textContent = 'Dark';
         }
 
         function toggleTheme() {
-            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('dark-mode');
             
-            if (document.body.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light');
-                btn.textContent = 'Dark';
-            } else {
+            if (document.body.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
                 btn.textContent = 'Light';
+            } else {
+                localStorage.setItem('theme', 'light');
+                btn.textContent = 'Dark';
             }
         }
 
