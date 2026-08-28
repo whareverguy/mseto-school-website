@@ -8,7 +8,7 @@
         :root { 
             --bg-color: #0b0f19; 
             --card-bg: #1e2640; 
-            --footer-bg: #131a2e; /* Distinct slightly deeper tone for footer separation */
+            --footer-bg: #131a2e; 
             --text-main: #f8fafc; 
             --text-muted: #a0aec0; 
             --accent-cyan: #38bdf8; 
@@ -19,7 +19,7 @@
         body.light-mode { 
             --bg-color: #ffffff; 
             --card-bg: #f1f5f9; 
-            --footer-bg: #e2e8f0; /* Distinct contrast tone for light mode footer */
+            --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
             --text-muted: #64748b; 
             --border-color: #cbd5e1; 
@@ -211,36 +211,28 @@
     </style>
 </head>
 <body>
-    <!-- Instant theme check script to prevent flashing -->
     <script>
-        if (localStorage.getItem('theme') === 'light') {
+        if (localStorage.getItem('theme') !== 'dark') {
             document.body.classList.add('light-mode');
         }
     </script>
 
-    <!-- Navigation Header -->
     <header>
         <div class="logo-container">
             <div class="school-badge">
                 <svg viewBox="0 0 100 110" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Outer and Inner Shield Borders -->
                     <path d="M10,20 L90,20 L80,80 L50,105 L20,80 Z" fill="none" stroke="#38bdf8" stroke-width="4"></path>
                     <path d="M16,25 L84,25 L75,76 L50,98 L25,76 Z" fill="none" stroke="#38bdf8" stroke-width="1.5"></path>
                     
-                    <!-- Top Verse -->
                     <text x="50" y="15" fill="#ef4444" font-size="8" font-weight="bold" text-anchor="middle">Proverbs 22:6</text>
                     
-                    <!-- Side Text: MSETO -->
                     <text x="27" y="52" fill="#ef4444" font-size="7.5" font-weight="bold" transform="rotate(-52, 27, 52)" text-anchor="middle">MSETO</text>
                     
-                    <!-- Center Box & JUNIOR Text -->
                     <rect x="30" y="28" width="40" height="11" fill="#0a192f" rx="2"></rect>
                     <text x="50" y="36" fill="#ef4444" font-size="8.5" font-weight="bold" text-anchor="middle">JUNIOR</text>
                     
-                    <!-- Side Text: SCHOOL -->
                     <text x="73" y="52" fill="#ef4444" font-size="7.5" font-weight="bold" transform="rotate(52, 73, 52)" text-anchor="middle">SCHOOL</text>
                     
-                    <!-- Central Graphics/Icons -->
                     <g fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round">
                         <path d="M42,50 L42,63 M39,54 L45,54 M40,63 L40,70 M44,63 L44,70" stroke="#38bdf8"></path>
                         <circle cx="42" cy="46" r="2.5" fill="#38bdf8" stroke="none"></circle>
@@ -249,7 +241,6 @@
                         <path d="M45,56 L55,56" stroke="#38bdf8" stroke-width="1"></path>
                     </g>
                     
-                    <!-- Bottom Banner & Motto -->
                     <path d="M5,82 L20,78 L35,84 L50,81 L65,84 L80,78 L95,82 L90,92 L50,96 L10,92 Z" fill="#38bdf8" stroke="none"></path>
                     <text x="50" y="89" fill="#ef4444" font-size="3.8" font-weight="bold" text-anchor="middle">LEARNERS TODAY LEADERS TOMORROW</text>
                 </svg>
@@ -275,20 +266,17 @@
         </nav>
     </header>
 
-    <!-- Immersive Cinematic Hero Banner using IMG-20260718-WA0058.jpg -->
     <section class="hero">
         <div class="hero-subtitle">Learners Today, Leaders Tomorrow</div>
         <h1>Mseto Junior School</h1>
         <a href="admissions.html" class="hero-btn">Book A Tour</a>
     </section>
 
-    <!-- About Section -->
     <section class="about-section">
         <h2>About Our School</h2>
         <p>Mseto Junior School provides a holistic, rigorous curriculum designed to challenge young minds while fostering moral character and creativity. Our dedicated educators ensure every child is supported in a safe, inspiring environment.</p>
     </section>
 
-    <!-- Photo Gallery Section using remaining trip photos -->
     <section class="gallery-section">
         <h2>Life at Mseto Junior School</h2>
         <div class="gallery-grid">
@@ -301,7 +289,6 @@
         </div>
     </section>
 
-    <!-- Modern 3-Column Footer with Accent Separator & Tone Contrast -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -322,11 +309,10 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Mseto Junior School. All rights reserved.</p>
+            <p>© 2026 Mseto Junior School. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         const btn = document.getElementById('theme-btn');
         const navMenu = document.getElementById('nav-menu');
