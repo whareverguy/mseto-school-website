@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Mseto Junior School | Announcements</title>
     <style>
         :root { 
             --bg-color: #0b0f19; 
+            --card-bg: #1e2640;
             --footer-bg: #131a2e; 
             --text-main: #f8fafc; 
             --text-muted: #a0aec0; 
@@ -17,6 +19,7 @@
 
         body.light-mode { 
             --bg-color: #ffffff; 
+            --card-bg: #f1f5f9;
             --footer-bg: #e2e8f0; 
             --text-main: #1e293b; 
             --text-muted: #475569; 
@@ -43,6 +46,7 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            transition: background-color 0.3s;
         }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .school-logo-img { width: 50px; height: 50px; object-fit: contain; border-radius: 50%; border: 2px solid var(--accent-cyan); }
@@ -72,7 +76,7 @@
         
         .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
         
-        /* Vibrant Sunrise Glow Gradient across BOTH modes (No fading to white) */
+        /* Vibrant Sunrise Glow Gradient across BOTH modes */
         .announcement-card { 
             background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%); 
             border: 1px solid var(--border-color); 
@@ -136,7 +140,7 @@
 
         @media (max-width: 1024px) {
             .menu-toggle { display: block; }
-            nav { display: none; flex-direction: column; width: 100%; background-color: var(--footer-bg); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
+            nav { display: none; flex-direction: column; width: 100%; background-color: var(--bg-color); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
             nav.active { display: flex; }
             nav a { font-size: 1.1rem; width: 100%; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
             .hero h1 { font-size: 2.2rem; }
@@ -147,6 +151,8 @@
     <script>
         if (localStorage.getItem('theme') === 'dark') { 
             document.body.classList.remove('light-mode'); 
+        } else {
+            localStorage.setItem('theme', 'light');
         }
     </script>
     
@@ -169,60 +175,4 @@
     </header>
 
     <section class="hero">
-        <div class="hero-subtitle">News & Notices</div>
-        <h1>School Announcements</h1>
-    </section>
-
-    <section class="content-section">
-        <div class="announcement-card">
-            <span class="date">October 25, 2026</span>
-            <h3>Annual Prize-giving & Closing Ceremony</h3>
-            <p>Mseto holds the annual prize giving day to celebrate all of our learners and to appreciate them for all of there hard work</p>
-        </div>
-        <div class="announcement-card">
-            <span class="date">August 25, 2026</span>
-            <h3>Opening Dates for Next Term</h3>
-            <p>Students are expected back on school grounds ready for morning assembly by 8:00 AM sharp on the first day of the new term.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Mseto Junior School</h4>
-                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><strong>Phone:</strong> +254 735 411906</p>
-                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
-                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
-            </div>
-            <div class="footer-col">
-                <h4>Find Us On Map</h4>
-                <div class="footer-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Mseto Junior School. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() { 
-            document.getElementById('nav-menu').classList.toggle('active'); 
-        }
-
-        const btn = document.getElementById('theme-btn');
-        btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
-        
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-            btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
-        }
-    </script>
-</body>
-</html>
+        <div class="hero-subtitle
