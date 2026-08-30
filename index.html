@@ -62,4 +62,365 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: rgba(255, 255, 255, 0.2); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
 
-        /*
+        /* Mobile Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Banner */
+        .hero { 
+            min-height: 70vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 60px 8%; 
+            border-bottom: 4px solid var(--accent-cyan);
+            background: linear-gradient(to top, rgba(11, 15, 25, 0.9) 10%, rgba(11, 15, 25, 0.3) 60%), url('IMG-20260718-WA0058.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+        .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+        .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
+        
+        .hero-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .hero-btn:hover {
+            background-color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #ffffff;
+        }
+
+        /* Unique Section Gradients */
+        .gradient-sunrise {
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+            border: 1px solid #f472b6;
+        }
+        .gradient-teal {
+            background: linear-gradient(135deg, #06b6d4 0%, #0284c7 50%, #0f766e 100%);
+            border: 1px solid #38bdf8;
+        }
+        .gradient-berry {
+            background: linear-gradient(135deg, #701a75 0%, #be185d 50%, #e11d48 100%);
+            border: 1px solid #f472b6;
+        }
+
+        /* About & Content Sections */
+        .content-section { padding: 60px 5% 30px 5%; max-width: 900px; margin: 30px auto 10px auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .content-section h2 { color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.4); font-size: 2rem; margin-bottom: 20px; text-align: center; }
+        .content-section p { color: #f8fafc; text-shadow: 0 1px 2px rgba(0,0,0,0.3); font-size: 1.1rem; line-height: 1.7; text-align: center; margin-bottom: 15px; font-weight: 500; }
+
+        /* Feature Cards Grid */
+        .cards-section {
+            padding: 20px 5% 40px 5%;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            color: var(--accent-cyan);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .info-card {
+            padding: 32px 28px;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        .info-card h3 {
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 0 0 14px 0;
+            padding: 0;
+            border: none;
+            text-align: left;
+        }
+        .info-card p {
+            color: #f8fafc;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        /* Gallery Section */
+        .gallery-section { padding: 40px 5% 60px 5%; }
+        .gallery-section h2 { text-align: center; color: var(--accent-cyan); margin-bottom: 30px; font-size: 2rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .gallery-card { border-radius: 8px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+        .gallery-card img:hover { transform: scale(1.03); }
+
+        /* Footer Styles */
+        footer { 
+            background-color: var(--footer-bg); 
+            padding: 50px 5% 20px 5%; 
+            border-top: 3px solid var(--accent-cyan); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+            transition: background-color 0.3s;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            align-items: start;
+        }
+        .footer-col h4 {
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            color: var(--text-muted);
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .footer-map-container {
+            height: 180px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-cyan);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Media Queries */
+        @media(max-width: 768px) {
+            .menu-toggle { display: flex; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                box-sizing: border-box;
+                background-color: var(--footer-bg);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 5%;
+                border-bottom: 2px solid var(--accent-cyan);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                gap: 0;
+            }
+            nav.active { display: flex; }
+            nav a {
+                font-size: 1.05rem;
+                width: 100%;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
+                text-align: left;
+            }
+            nav a:last-of-type { border-bottom: none; }
+            .theme-btn {
+                width: 100%;
+                text-align: left;
+                padding: 10px 12px;
+                margin-top: 10px;
+            }
+            .hero { padding: 40px 5%; min-height: 60vh; }
+            .hero h1 { font-size: 2.2rem; }
+            .brand-name { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <script>
+        if (localStorage.getItem('theme') === 'light') { 
+            document.body.classList.remove('dark-mode'); 
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Mseto Junior School Logo" class="school-logo-img" onerror="this.style.display='none'">
+            <div class="brand-name">Mseto Junior School</div>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="sports.html">Sports & Clubs</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="announcements.html">Announcements</a>
+            <a href="gallery.html">Gallery</a>
+            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Light</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-subtitle">Learners Today, Leaders Tomorrow</div>
+        <h1>Mseto Junior School</h1>
+        <a href="admissions.html" class="hero-btn">Book A Tour</a>
+    </section>
+
+    <section class="content-section gradient-sunrise">
+        <h2>About Our School</h2>
+        <p>Mseto Junior School provides a holistic, rigorous curriculum designed to challenge young minds while fostering moral character and creativity. Our dedicated educators ensure every child is supported in a safe, inspiring environment.</p>
+    </section>
+
+    <section class="cards-section">
+        <h2 class="section-title">Our School Sections</h2>
+        <div class="cards-grid">
+            <div class="info-card gradient-teal">
+                <h3>Pre-School</h3>
+                <p>Nurturing young learners through play-based discovery, foundational literacy, numeracy, and active social development in a warm, supportive environment.</p>
+            </div>
+            <div class="info-card gradient-teal">
+                <h3>Upper Primary</h3>
+                <p>Developing strong academic foundations, critical thinking, and independent learning habits to prepare students for junior secondary success.</p>
+            </div>
+            <div class="info-card gradient-teal">
+                <h3>Junior Secondary</h3>
+                <p>Empowering learners under the Competency Based Curriculum (CBC) with practical skills, STEM education, coding classes, and leadership opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <h2 class="section-title">Guiding Principles</h2>
+        <div class="cards-grid">
+            <div class="info-card gradient-berry">
+                <h3>Our Vision</h3>
+                <p>We envision a community of joyful, lifelong learners prepared to make a positive difference in the world.</p>
+            </div>
+            <div class="info-card gradient-berry">
+                <h3>Our Mission</h3>
+                <p>To provide a transformational learning journey for every learner in Mseto and develop each child to the best of his/her potential in both academic and life skills.</p>
+            </div>
+            <div class="info-card gradient-berry">
+                <h3>The Future</h3>
+                <p>We are focused on transforming our Junior High into an institution with competitive standards across all operations, empowering our learners with the skills and mindsets to confidently reach their dreams.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Life at Mseto Junior School</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="IMG-20260718-WA0062.jpg" alt="School activities">
+            </div>
+            <div class="gallery-card">
+                <img src="IMG-20260718-WA0058.jpg" alt="School transport and grounds">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mseto Junior School</h4>
+                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><strong>Phone:</strong> +254 735 411906</p>
+                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
+                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us On Map</h4>
+                <div class="footer-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Mseto Junior School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        btn.textContent = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                btn.textContent = 'Light';
+            } else {
+                localStorage.setItem('theme', 'light');
+                btn.textContent = 'Dark';
+            }
+        }
+
+        function toggleMenu() {
+            navMenu.classList.toggle('active');
+        }
+
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
