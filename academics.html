@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Mseto Junior School | Academics</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root { 
             --bg-color: #0b0f19; 
             --footer-bg: #131a2e; 
@@ -44,6 +49,7 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            transition: background-color 0.3s;
         }
         .logo-container { display: flex; align-items: center; gap: 15px; }
         .school-logo-img { width: 50px; height: 50px; object-fit: contain; border-radius: 50%; border: 2px solid var(--accent-cyan); }
@@ -66,205 +72,4 @@
             align-items: flex-start; 
             padding: 60px 8%; 
             border-bottom: 4px solid var(--accent-cyan);
-            background: linear-gradient(to top, rgba(11, 15, 25, 0.95) 10%, rgba(11, 15, 25, 0.4) 60%), url('IMG-20260718-WA0062.jpg');
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat;
-        }
-        .hero-subtitle { font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
-        .hero h1 { font-size: 3.2rem; margin: 0 0 20px 0; color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,0.8); max-width: 800px; }
-
-        /* Content Section & Gradients */
-        .content-section { padding: 60px 5%; max-width: 1000px; margin: 0 auto; }
-        
-        .gradient-sunrise {
-            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
-            border: 1px solid #f472b6;
-        }
-        .gradient-teal {
-            background: linear-gradient(135deg, #06b6d4 0%, #0284c7 50%, #0f766e 100%);
-            border: 1px solid #38bdf8;
-        }
-        .gradient-berry {
-            background: linear-gradient(135deg, #701a75 0%, #be185d 50%, #e11d48 100%);
-            border: 1px solid #f472b6;
-        }
-
-        .subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        
-        .subject-card { 
-            border-radius: 8px; 
-            padding: 25px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .subject-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        .subject-card h3 { 
-            color: #ffffff; 
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4); 
-            margin-top: 0; 
-            margin-bottom: 15px; 
-            font-size: 1.3rem; 
-        }
-        .subject-card p { 
-            color: #f8fafc; 
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3); 
-            font-size: 0.95rem; 
-            margin: 0; 
-            font-weight: 500; 
-        }
-
-        /* Distinct Footer Styles */
-        footer { 
-            background-color: var(--footer-bg); 
-            padding: 50px 5% 20px 5%; 
-            border-top: 3px solid var(--accent-cyan); 
-            color: var(--text-muted); 
-            font-size: 0.9rem; 
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto 30px auto;
-            text-align: left;
-            align-items: start;
-        }
-        .footer-col h4 {
-            color: var(--accent-cyan);
-            font-size: 1.1rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .footer-col p {
-            color: var(--text-muted);
-            margin: 8px 0;
-            line-height: 1.5;
-        }
-        .footer-map-container {
-            height: 180px;
-            border-radius: 6px;
-            border: 1px solid var(--accent-cyan);
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            margin-top: 20px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Responsive Media Queries */
-        @media (max-width: 1024px) {
-            .menu-toggle { display: block; }
-            nav { display: none; flex-direction: column; width: 100%; background-color: var(--bg-color); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
-            nav.active { display: flex; }
-            nav a { font-size: 1.1rem; width: 100%; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
-</head>
-<body>
-    <script>
-        if (localStorage.getItem('theme') !== 'dark') { 
-            document.body.classList.add('light-mode'); 
-        }
-    </script>
-
-    <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Mseto Junior School Logo" class="school-logo-img" onerror="this.style.display='none'">
-            <div class="brand-name">Mseto Junior School</div>
-        </div>
-        
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Navigation">☰</button>
-        
-        <nav id="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="academics.html" class="active">Academics</a>
-            <a href="sports.html">Sports & Clubs</a>
-            <a href="admissions.html">Admissions</a>
-            <a href="downloads.html">Downloads</a>
-            <a href="announcements.html">Announcements</a>
-            <a href="gallery.html">Gallery</a>
-            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Dark</button>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-subtitle">Curriculum & Learning</div>
-        <h1>Academic Excellence</h1>
-    </section>
-
-    <section class="content-section">
-        <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Empowering junior secondary learners with comprehensive knowledge, critical thinking, and practical skills under the Competency Based Curriculum (CBC).</p>
-        
-        <div class="subjects-grid">
-            <div class="subject-card gradient-sunrise">
-                <h3>Mathematics & Sciences</h3>
-                <p>Building strong analytical foundations through advanced math concepts, integrated science, and hands-on laboratory experiments.</p>
-            </div>
-            <div class="subject-card gradient-teal">
-                <h3>Languages</h3>
-                <p>Mastery of English and Kiswahili, emphasizing effective written and verbal communication, literature, and comprehension.</p>
-            </div>
-            <div class="subject-card gradient-berry">
-                <h3>Humanities & Social Studies</h3>
-                <p>Exploring history, geography, citizenship, and cultural awareness to nurture responsible global and local citizens.</p>
-            </div>
-            <div class="subject-card gradient-sunrise">
-                <h3>Coding Classes</h3>
-                <p>Hands-on programming and computer literacy classes designed to equip students with essential digital and technical skills for the future.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Mseto Junior School</h4>
-                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><strong>Phone:</strong> +254 735 411906</p>
-                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
-                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
-            </div>
-            <div class="footer-col">
-                <h4>Find Us On Map</h4>
-                <div class="footer-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Mseto Junior School. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() { 
-            document.getElementById('nav-menu').classList.toggle('active'); 
-        }
-
-        const btn = document.getElementById('theme-btn');
-        btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
-        
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-            btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
-        }
-    </script>
-</body>
-</html>
+            background: linear-gradient(to
