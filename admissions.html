@@ -88,4 +88,261 @@
             border: 1px solid #38bdf8;
         }
 
-        .info-box
+        .info-box { 
+            border-radius: 8px; 
+            padding: 30px; 
+            margin-bottom: 30px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .info-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .info-box h3 { 
+            color: #ffffff; 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4); 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            font-size: 1.4rem; 
+        }
+        .info-box ul { 
+            padding-left: 20px; 
+            color: #f8fafc; 
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3); 
+            margin: 0; 
+            font-weight: 500; 
+        }
+        .info-box li { margin-bottom: 10px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-main); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-main); font-size: 1rem; box-sizing: border-box; }
+        
+        .success-message {
+            display: none;
+            background-color: rgba(56, 189, 248, 0.15);
+            border: 1px solid var(--accent-cyan);
+            color: var(--text-main);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .submit-btn { background-color: var(--accent-cyan); color: #0b0f19; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: opacity 0.3s; }
+        .submit-btn:hover { opacity: 0.9; }
+
+        footer { 
+            background-color: var(--footer-bg); 
+            padding: 50px 5% 20px 5%; 
+            border-top: 3px solid var(--accent-cyan); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            align-items: start;
+        }
+        .footer-col h4 {
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            color: var(--text-muted);
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .footer-map-container {
+            height: 180px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-cyan);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .menu-toggle { display: block; }
+            nav { display: none; flex-direction: column; width: 100%; background-color: var(--footer-bg); position: absolute; top: 100%; left: 0; padding: 20px 5%; border-bottom: 2px solid var(--accent-cyan); box-shadow: 0 10px 20px rgba(0,0,0,0.3); align-items: flex-start; gap: 15px; }
+            nav.active { display: flex; }
+            nav a { font-size: 1.1rem; width: 100%; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') { 
+            document.body.classList.remove('light-mode'); 
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Mseto Junior School Logo" class="school-logo-img" onerror="this.style.display='none'">
+            <div class="brand-name">Mseto Junior School</div>
+        </div>
+        
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="academics.html">Academics</a>
+            <a href="sports.html">Sports & Clubs</a>
+            <a href="admissions.html" class="active">Admissions</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="announcements.html">Announcements</a>
+            <a href="gallery.html">Gallery</a>
+            <button id="theme-btn" class="theme-btn" onclick="toggleTheme()">Dark</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-subtitle">Enroll Today</div>
+        <h1>Join Mseto Junior School</h1>
+    </section>
+
+    <section class="content-section">
+        <p style="color: var(--text-muted); font-size: 1.1rem; text-align: center; margin-bottom: 40px;">Begin your journey towards academic excellence and strong moral character. Admissions are open for all grades from Playgroup up to Grade 9.</p>
+        
+        <div class="info-box gradient-sunrise">
+            <h3>Admission Requirements</h3>
+            <ul>
+                <li>Completed application form and previous academic assessment reports.</li>
+                <li>Copy of birth certificate.</li>
+                <li>Parent/Guardian interview session and school tour.</li>
+            </ul>
+        </div>
+        
+        <div class="info-box gradient-teal">
+            <h3>Book a Tour or Apply Online</h3>
+            
+            <div id="success-alert" class="success-message">
+                Thank you! Your application inquiry has been successfully received. Our team will contact you shortly.
+            </div>
+
+            <form id="admissions-form">
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name</label>
+                    <input type="text" id="parent-name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Student's Full Name</label>
+                    <input type="text" id="student-name" required placeholder="Enter student's full name">
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade Level Applying For</label>
+                    <select id="grade" required>
+                        <option value="" disabled selected>Select grade level</option>
+                        <option value="Playgroup">Playgroup</option>
+                        <option value="PP1">PP1</option>
+                        <option value="PP2">PP2</option>
+                        <option value="Grade 1">Grade 1</option>
+                        <option value="Grade 2">Grade 2</option>
+                        <option value="Grade 3">Grade 3</option>
+                        <option value="Grade 4">Grade 4</option>
+                        <option value="Grade 5">Grade 5</option>
+                        <option value="Grade 6">Grade 6</option>
+                        <option value="Grade 7">Grade 7</option>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous-school">Previous School Attended</label>
+                    <input type="text" id="previous-school" placeholder="Enter previous school name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Preferred Tour Date</label>
+                    <textarea id="message" rows="4" placeholder="Let us know any specific questions or preferred dates"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Mseto Junior School</h4>
+                <p>Learners Today, Leaders Tomorrow. Providing holistic education and inspiring young minds to achieve excellence.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><strong>Phone:</strong> +254 735 411906</p>
+                <p><strong>Email:</strong> msetojuniorsch@gmail.com</p>
+                <p><strong>Hours:</strong> 8:00 AM - 5:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us On Map</h4>
+                <div class="footer-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.810556018979!2d36.69922707365183!3d-1.2878037986999487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bfa31c4c5db%3A0x4c2eeb37e1456ea!2sMseto%20Junior%20school.!5e0!3m2!1sen!2ske!4v1787315048891!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Mseto Junior School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById('nav-menu').classList.toggle('active'); 
+        }
+
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        const form = document.getElementById('admissions-form');
+        const successAlert = document.getElementById('success-alert');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            successAlert.style.display = 'block';
+            form.reset();
+            successAlert.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const btn = document.getElementById('theme-btn');
+        btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
+        
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+            btn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
+        }
+    </script>
+</body>
+</html>
