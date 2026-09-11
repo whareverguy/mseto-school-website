@@ -64,6 +64,47 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: rgba(255, 255, 255, 0.2); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
 
+        /* Announcement Ticker Styles */
+        .announcement-ticker {
+            background-color: var(--accent-red);
+            color: #ffffff;
+            padding: 10px 5%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ticker-label {
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ticker-content-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .announcement-ticker:hover .ticker-content {
+            animation-play-state: paused;
+        }
+
         /* Mobile Menu Toggle Button */
         .menu-toggle {
             display: none;
@@ -190,7 +231,7 @@
         .gallery-section h2 { text-align: center; color: var(--accent-cyan); margin-bottom: 30px; font-size: 2rem; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
         .gallery-card { border-radius: 8px; overflow: hidden; background: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+        .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.3s ease; cursor: pointer; }
         .gallery-card img:hover { transform: scale(1.03); }
 
         /* Lightbox Modal Styles */
@@ -341,6 +382,16 @@
         </nav>
     </header>
 
+    <!-- Announcement Ticker Bar -->
+    <div class="announcement-ticker">
+        <div class="ticker-label">📢 Notice:</div>
+        <div class="ticker-content-wrapper">
+            <div class="ticker-content">
+                Admissions for the new academic year are now open! Contact us at +254 735 411906 or visit our office for inquiries. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Welcome back to school!
+            </div>
+        </div>
+    </div>
+
     <section class="hero">
         <div class="hero-subtitle">Learners Today, Leaders Tomorrow</div>
         <h1>Mseto Junior School</h1>
@@ -464,8 +515,7 @@
         const modalImg = document.getElementById('lightbox-img');
         const galleryImages = document.querySelectorAll('.gallery-card img');
 
-        galleryImages.forEach(img => {
-            img.style.cursor = 'pointer';
+        galleryImages.export = galleryImages.forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = 'flex';
                 modalImg.src = img.src;
