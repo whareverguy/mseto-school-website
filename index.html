@@ -64,26 +64,29 @@
         nav a:hover, nav a.active { color: var(--accent-cyan); }
         .theme-btn { cursor: pointer; background: rgba(255, 255, 255, 0.2); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 6px 12px; border-radius: 4px; font-weight: 500; }
 
-        /* Announcement Ticker Styles */
+        /* Announcement Ticker Styles (Refined & Subtle) */
         .announcement-ticker {
-            background-color: var(--accent-red);
-            color: #ffffff;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 10px 5%;
             display: flex;
             align-items: center;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .ticker-label {
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            background-color: var(--accent-cyan);
+            color: #ffffff;
             padding: 3px 10px;
             border-radius: 4px;
             margin-right: 15px;
             flex-shrink: 0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -96,6 +99,7 @@
             animation: marquee 25s linear infinite;
             font-size: 0.95rem;
             font-weight: 500;
+            color: var(--text-muted);
         }
         @keyframes marquee {
             0% { transform: translateX(100%); }
@@ -382,9 +386,9 @@
         </nav>
     </header>
 
-    <!-- Announcement Ticker Bar -->
+    <!-- Announcement Ticker Bar (Subtle & Themed) -->
     <div class="announcement-ticker">
-        <div class="ticker-label">📢 Notice:</div>
+        <div class="ticker-label">Notice</div>
         <div class="ticker-content-wrapper">
             <div class="ticker-content">
                 Admissions for the new academic year are now open! Contact us at +254 735 411906 or visit our office for inquiries. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Welcome back to school!
@@ -515,7 +519,7 @@
         const modalImg = document.getElementById('lightbox-img');
         const galleryImages = document.querySelectorAll('.gallery-card img');
 
-        galleryImages.export = galleryImages.forEach(img => {
+        galleryImages.forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = 'flex';
                 modalImg.src = img.src;
